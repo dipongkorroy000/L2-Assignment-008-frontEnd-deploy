@@ -1,0 +1,145 @@
+import {getTour} from "@/src/services/tours/tours.service";
+import {Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle} from "@/src/components/ui/card";
+import {Avatar, AvatarFallback, AvatarImage} from "@/src/components/ui/avatar";
+import {Badge} from "@/src/components/ui/badge";
+import Image from "next/image";
+import RequestModal from "@/src/components/modules/tours/RequestedTourModal";
+import {getCookie} from "@/src/utils/serverToken";
+import Link from "next/link";
+
+interface Guide {
+  id: number;
+  name: string;
+  email: string;
+  profilePhoto: string;
+  contactNumber: string;
+  languages: string[];
+}
+
+interface Review {
+  rating: number;
+  comment: string;
+}
+
+interface ITour {
+  averageRating: number;
+  category: {id: number; title: string};
+  city: string;
+  createdAt: string;
+  description: string;
+  destination: string;
+  duration: string;
+  groupMembers: number;
+  guide: Guide;
+  image: string;
+  meetingPoint: string;
+  reviews: Review[];
+  title: string;
+}
+
+const TourDetails = async ({params}: {params: Promise<{tourId: string}>}) => {
+  const {tourId} = await params;
+
+  const accessToken = await getCookie("accessToken");
+
+  const tour: ITour = await getTour(Number(tourId));
+
+  return (
+    <section className="py-20">
+      <div className="max-w-4xl mx-auto">
+        <Card className="shadow-lg">
+          {/* Tour Header */}
+          <CardHeader>
+            <CardTitle className="text-2xl font-bold">{tour.category?.title}</CardTitle>
+            <CardDescription>
+              • City: {tour.city} • Since from: {new Date(tour.createdAt).toLocaleDateString()}
+            </CardDescription>
+          </CardHeader>
+
+          {/* Tour Image */}
+          <CardContent>
+            <Image width={300} height={300} src={tour.image} alt={tour.title || "tour image"} className="w-full h-64 object-cover rounded-md mb-6" />
+
+            <p className="text-xl font-bold mb-4 text-chart-3">{tour.title}</p>
+            <p className="text-muted-foreground mb-2">{tour.description}</p>
+
+            <div className="space-y-2">
+              <p>
+                <strong className="text-primary">Destination: </strong> {tour.destination}
+              </p>
+              <p>
+                <strong className="text-primary">Meeting Point: </strong> {tour.meetingPoint}
+              </p>
+
+              <p>
+                <strong className="text-primary">Max Group Size: </strong> {tour.groupMembers}
+              </p>
+              <p>
+                <strong className="text-primary">Duration: </strong>
+                {tour.duration}
+              </p>
+              <div className="flex gap-5 items-center">
+                <strong className="text-primary">Languages: </strong>
+                {tour.guide.languages.map((language, idx) => (
+                  <p key={idx} className="border rounded-2xl px-3 py-1">
+                    {language}
+                  </p>
+                ))}
+              </div>
+            </div>
+          </CardContent>
+
+          {/* Guide Info */}
+          <CardContent>
+            <h3 className="text-lg font-semibold mb-3">Guide Information</h3>
+            <div className="flex items-center gap-4">
+              <Avatar>
+                <AvatarImage src={tour.guide?.profilePhoto} alt={tour.guide?.name} />
+                <AvatarFallback>{tour.guide?.name.charAt(0)}</AvatarFallback>
+              </Avatar>
+              <div>
+                <p className="font-medium">{tour.guide?.name}</p>
+                <p className="text-sm text-muted-foreground">{tour.guide?.email}</p>
+                <p className="text-sm text-muted-foreground">{tour.guide?.contactNumber}</p>
+              </div>
+            </div>
+          </CardContent>
+
+          {/* Request Modal */}
+          <CardContent>
+            {accessToken ? (
+              <RequestModal guideId={tour.guide.id} tourId={Number(tourId)} />
+            ) : (
+              <div className="flex flex-col items-center justify-center gap-3 p-6 border rounded-lg bg-muted/30">
+                <p className="text-sm text-muted-foreground">Please login to request tour</p>
+                <Link href={"/login"} className="text-chart-5 underline">
+                  Login
+                </Link>
+              </div>
+            )}
+          </CardContent>
+
+          {/* Reviews */}
+          <CardFooter className="flex flex-col items-start gap-2">
+            <h3 className="text-lg font-semibold">Reviews</h3>
+            <p>
+              <strong className="text-primary">Average Rating: </strong> {tour.averageRating}
+            </p>
+            {tour.reviews?.length > 0 ? (
+              tour.reviews.map((review, idx) => (
+                <div key={idx} className="flex items-center gap-2">
+                  <Badge variant="secondary">⭐ {review.rating}</Badge>
+                  <p>{review.comment}</p>
+                </div>
+              ))
+            ) : (
+              <p className="text-muted-foreground">No reviews yet.</p>
+            )}
+          </CardFooter>
+        </Card>
+      </div>
+    </section>
+  );
+};
+
+export default TourDetails;
