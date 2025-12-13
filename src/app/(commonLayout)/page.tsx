@@ -17,17 +17,17 @@ export default function HomePage() {
         <FeatureDestination></FeatureDestination>
       </section>
 
-      {/* Call to Action */}
-     <section className="text-center py-20">
-        <BecomeAGuide></BecomeAGuide>
-      </section>
- 
-     <section className="text-center py-20">
+      <section className="text-center py-20">
         <AboutPage></AboutPage>
       </section>
-    
-     <section className="max-lg:mx-10">
+
+      <section className="max-lg:mx-10">
         <PrivacyPage></PrivacyPage>
+      </section>
+
+      {/* Call to Action */}
+      <section className="text-center py-20">
+        <BecomeAGuide></BecomeAGuide>
       </section>
     </div>
   );
