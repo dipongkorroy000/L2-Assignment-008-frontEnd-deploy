@@ -4,15 +4,21 @@ import HeroSection from "@/src/components/home/HeroSection";
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-r from-primary-foreground via-white to-primary-foreground">
+    <div className="bg-gradient-to-r from-primary-foreground via-white to-primary-foreground">
       {/* Hero Section */}
-      <HeroSection></HeroSection>
+      <section className="flex flex-col items-center justify-center text-center py-32">
+        <HeroSection></HeroSection>
+      </section>
 
       {/* Featured Destinations */}
-      <FeatureDestination></FeatureDestination>
+      <section className="max-w-7xl mx-auto py-36">
+        <FeatureDestination></FeatureDestination>
+      </section>
 
       {/* Call to Action */}
-      <BecomeAGuide></BecomeAGuide>
+     <section className="text-center py-20">
+        <BecomeAGuide></BecomeAGuide>
+      </section>
     </div>
   );
 }

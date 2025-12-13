@@ -20,10 +20,9 @@ export default function Footer() {
         <div>
           <h3 className="text-lg font-semibold text-white mb-4">Quick Links</h3>
           <ul className="space-y-2">
-            <li><Link href="/explore" className="hover:text-white">Explore Tours</Link></li>
-            <li><Link href="/become-guide" className="hover:text-white">Become a Guide</Link></li>
+            <li><Link href="/explore-tours" className="hover:text-white">Explore Tours</Link></li>
+            <li><Link href="/become-a-guide" className="hover:text-white">Become a Guide</Link></li>
             <li><Link href="/about" className="hover:text-white">About Us</Link></li>
-            <li><Link href="/contact" className="hover:text-white">Contact</Link></li>
           </ul>
         </div>
 
@@ -31,8 +30,8 @@ export default function Footer() {
         <div>
           <h3 className="text-lg font-semibold text-white mb-4">Support</h3>
           <ul className="space-y-2">
-            <li><Link href="/faq" className="hover:text-white">FAQ</Link></li>
-            <li><Link href="/terms" className="hover:text-white">Terms & Conditions</Link></li>
+            <li><Link href="/contact" className="hover:text-white">Contact</Link></li>
+            <li><Link href="/frequently-asked-questions" className="hover:text-white">FAQ</Link></li>
             <li><Link href="/privacy" className="hover:text-white">Privacy Policy</Link></li>
           </ul>
         </div>
