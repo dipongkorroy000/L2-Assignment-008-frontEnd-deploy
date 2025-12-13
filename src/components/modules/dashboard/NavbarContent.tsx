@@ -1,12 +1,11 @@
 "use client";
 
-import {Menu, Search} from "lucide-react";
+import {Menu} from "lucide-react";
 import {useEffect, useState} from "react";
 import MobileSidebar from "./MobileSidebar";
 import {NavSection} from "@/src/types/navItems.interface";
 import {IUserProfile} from "@/src/types";
 import {Button} from "../../ui/button";
-import {Input} from "../../ui/input";
 import {Sheet, SheetContent, SheetTrigger} from "../../ui/sheet";
 import ProfileDropdown from "./ProfileDropdown";
 

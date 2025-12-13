@@ -21,3 +21,14 @@ export const getUser = async (id: number) => {
     console.log(error);
   }
 };
+
+export const userStats = async () => {
+  try {
+    const res = await server_fetch.get("/stats/admin");
+    const result = await res.json();
+
+    return result;
+  } catch (error) {
+    console.log(error);
+  }
+};

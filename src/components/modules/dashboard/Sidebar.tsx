@@ -8,6 +8,8 @@ import {IUserProfile} from "@/src/types";
 const Sidebar = async () => {
   const userInfo = (await getProfile()) as IUserProfile;
 
+  if (!userInfo) return null;
+
   const navItems: NavSection[] = getNavItemsByRole(userInfo.role);
 
   return <SidebarContent userInfo={userInfo} navItems={navItems}></SidebarContent>;

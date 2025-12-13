@@ -15,7 +15,9 @@ const getProfile = async (): Promise<IUserProfile | any> => {
 
     const result = await response.json();
 
-    userProfile = {name: result.data.admin?.name || result.data.guide?.name || result.data.tourist?.name, ...result.data};
+    if (result.data) {
+      userProfile = {name: result.data.admin?.name || result.data.guide?.name || result.data.tourist?.name, ...result.data};
+    }
 
     return userProfile;
   } catch (error: any) {

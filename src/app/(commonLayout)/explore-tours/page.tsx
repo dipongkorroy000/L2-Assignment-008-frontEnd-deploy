@@ -4,9 +4,11 @@ import {getCateWithTours} from "@/src/services/tours/tours.service";
 const ExploreToursPage = async () => {
   const tour = await getCateWithTours();
 
+  const toursData = tour?.data ?? [];
+
   return (
     <section className="max-w-7xl mx-auto">
-      <Tours tours={tour.data}></Tours>
+      <Tours tours={toursData}></Tours>
     </section>
   );
 };

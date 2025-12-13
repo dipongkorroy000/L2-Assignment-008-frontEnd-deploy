@@ -113,3 +113,14 @@ export const updateTourStatusByGuide = async (id: number) => {
     };
   }
 };
+
+export const guideStats = async () => {
+  try {
+    const res = await server_fetch.get("/stats/guide");
+    const result = await res.json();
+
+    return result;
+  } catch (error) {
+    // console.log(error);
+  }
+};

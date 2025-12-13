@@ -5,13 +5,13 @@ import {User} from "lucide-react";
 import {DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger} from "../../ui/dropdown-menu";
 import {Button} from "../../ui/button";
 import Link from "next/link";
+import LogoutBtn from "../../static/LogoutBtn";
 
 interface UserDropdownProps {
   userInfo: IUserProfile;
 }
 
 const ProfileDropdown = ({userInfo}: UserDropdownProps) => {
-
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -37,6 +37,10 @@ const ProfileDropdown = ({userInfo}: UserDropdownProps) => {
         </DropdownMenuItem>
 
         <DropdownMenuSeparator></DropdownMenuSeparator>
+        
+        <DropdownMenuItem asChild>
+          <LogoutBtn />
+        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );

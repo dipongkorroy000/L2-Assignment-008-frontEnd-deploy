@@ -144,8 +144,8 @@ export const adminNavItems: NavSection[] = [
         roles: ["ADMIN"],
       },
       {
-        title: "Canceled  Tours",
-        href: "/admin/dashboard/canceled-tours",
+        title: "Upcoming  Tours",
+        href: "/admin/dashboard/upcoming-tours",
         icon: "Clock",
         roles: ["ADMIN"],
       },
@@ -155,7 +155,7 @@ export const adminNavItems: NavSection[] = [
     title: "Category Management",
     items: [
       {
-        title: "Category",
+        title: "Tours Category",
         href: "/admin/dashboard/category-management",
         icon: "Calendar",
         roles: ["ADMIN"],

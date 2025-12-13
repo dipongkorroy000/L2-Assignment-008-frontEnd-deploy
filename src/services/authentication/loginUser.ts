@@ -28,6 +28,10 @@ export const loginUser = async (_currentState: any, formData: any): Promise<any>
     const setCookieHeaders = res.headers.getSetCookie();
     const result = await res.json();
 
+    if (!res.ok || result?.success === false) {
+      return {success: false, message: result?.message || "Login failed"};
+    }
+
     let accessTokenObj: null | any = null;
     let refreshTokenObj: null | any = null;
 
@@ -43,7 +47,9 @@ export const loginUser = async (_currentState: any, formData: any): Promise<any>
 
     // when login -> accessToken fetch backend -> then set accessToken frontend web
 
-    if (!accessTokenObj || !refreshTokenObj) throw new Error("No Set-Cookie header found");
+    if (!accessTokenObj || !refreshTokenObj) {
+      return {success: false, message: result?.message || "No Set-Cookie header found"};
+    }
 
     await setCookie("accessToken", accessTokenObj.accessToken, {
       secure: true,

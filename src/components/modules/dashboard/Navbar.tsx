@@ -8,8 +8,10 @@ import NavbarContent from "./NavbarContent";
 const Navbar = async () => {
   const userInfo = (await getProfile()) as IUserProfile;
 
-  const navItems: NavSection[] = getNavItemsByRole(userInfo.role);
-  const dashboardHome = getDefaultDashboardRoute(userInfo.role);
+  if (!userInfo) return null;
+
+  const navItems: NavSection[] = getNavItemsByRole(userInfo?.role);
+  const dashboardHome = getDefaultDashboardRoute(userInfo?.role);
 
   return <NavbarContent userInfo={userInfo} navItems={navItems} dashboardHome={dashboardHome}></NavbarContent>;
 };

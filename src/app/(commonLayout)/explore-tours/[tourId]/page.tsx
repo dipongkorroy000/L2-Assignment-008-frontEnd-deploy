@@ -16,9 +16,14 @@ interface Guide {
   languages: string[];
 }
 
-interface Review {
-  rating: number;
-  comment: string;
+interface RequestForm {
+  review: {
+    comment: string;
+    rating: number;
+  };
+  tourist: {
+    email: string;
+  };
 }
 
 interface ITour {
@@ -33,7 +38,7 @@ interface ITour {
   guide: Guide;
   image: string;
   meetingPoint: string;
-  reviews: Review[];
+ requestForm: RequestForm[];
   title: string;
 }
 
@@ -125,11 +130,14 @@ const TourDetails = async ({params}: {params: Promise<{tourId: string}>}) => {
             <p>
               <strong className="text-primary">Average Rating: </strong> {tour.averageRating}
             </p>
-            {tour.reviews?.length > 0 ? (
-              tour.reviews.map((review, idx) => (
-                <div key={idx} className="flex items-center gap-2">
-                  <Badge variant="secondary">⭐ {review.rating}</Badge>
-                  <p>{review.comment}</p>
+             {tour.requestForm?.length > 0 ? (
+              tour.requestForm.map((form, idx) => (
+                <div key={idx} className="space-y-3 border p-5 rounded-sm w-full mb-2">
+                  <div className="flex items-center justify-between">
+                    <Badge variant="secondary">⭐ {form.review.rating / 10}</Badge>
+                    <p className="bg-chart-1 px-3 rounded-sm">{form.tourist.email}</p>
+                  </div>
+                  <p className="p-2">{form.review.comment}</p>
                 </div>
               ))
             ) : (

@@ -7,7 +7,7 @@ const MyToursPage = async () => {
 
   return (
     <div>
-      <UpcomingToursTable data={upcomingTour.data} role="TOURIST"></UpcomingToursTable>
+      <UpcomingToursTable data={upcomingTour?.data} role="TOURIST"></UpcomingToursTable>
     </div>
   );
 };
