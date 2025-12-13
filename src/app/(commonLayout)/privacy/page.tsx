@@ -5,19 +5,19 @@ import {Card, CardHeader, CardTitle, CardContent} from "@/src/components/ui/card
 
 export default function PrivacyPage() {
   return (
-    <section className="max-w-4xl mx-auto py-12 space-y-8">
+    <section className="max-w-4xl mx-auto space-y-8 py-20">
       {/* Header */}
       <div className="text-center space-y-2">
-        <h1 className="text-3xl font-bold">Privacy & Data Protection</h1>
+        <h1 className="text-3xl font-bold max-lg:text-xl text-primary">Privacy & Data Protection</h1>
         <p className="text-muted-foreground">Your trust matters. Here’s how we handle your information.</p>
       </div>
 
       {/* Privacy Overview Card */}
       <Card className="shadow-md">
         <CardHeader>
-          <CardTitle>Overview</CardTitle>
+          <CardTitle className="text-chart-5">Overview</CardTitle>
         </CardHeader>
-        <CardContent className="space-y-3 text-muted-foreground">
+        <CardContent className="space-y-3 text-muted-foreground max-lg:text-sm">
           <p>
             We collect and use your data responsibly to provide safe and reliable guide services. Your personal information is never shared without consent.
           </p>

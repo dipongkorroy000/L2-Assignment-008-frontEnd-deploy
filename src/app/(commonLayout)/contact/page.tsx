@@ -9,13 +9,13 @@ const ContactPage = () => {
     <section className="max-w-5xl mx-auto py-12 space-y-10">
       {/* Page Header */}
       <div className="text-center space-y-2">
-        <h1 className="text-3xl font-bold">Contact Us</h1>
-        <p className="text-muted-foreground">We’d love to hear from you. Reach out anytime!</p>
+        <h1 className="text-3xl font-bold text-primary max-lg:text-2xl">Contact Us</h1>
+        <p className="text-muted-foreground max-lg:mx-10">We’d love to hear from you. Reach out anytime!</p>
       </div>
 
       {/* Contact Info Cards */}
       <div className="grid gap-6 md:grid-cols-3">
-        <Card className="shadow-md">
+        <Card className="shadow-md max-lg:mx-5">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Mail className="h-5 w-5 text-primary" /> Email
@@ -26,7 +26,7 @@ const ContactPage = () => {
           </CardContent>
         </Card>
 
-        <Card className="shadow-md">
+        <Card className="shadow-md max-lg:mx-5">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Phone className="h-5 w-5 text-primary" /> Phone
@@ -37,7 +37,7 @@ const ContactPage = () => {
           </CardContent>
         </Card>
 
-        <Card className="shadow-md">
+        <Card className="shadow-md max-lg:mx-5">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <MapPin className="h-5 w-5 text-primary" /> Address
@@ -50,7 +50,7 @@ const ContactPage = () => {
       </div>
 
       {/* Contact Form */}
-      <Card className="shadow-lg">
+      <Card className="shadow-md max-lg:mx-5">
         <CardHeader>
           <CardTitle>Send us a message</CardTitle>
         </CardHeader>

@@ -1,6 +1,8 @@
 import BecomeAGuide from "@/src/components/home/BecomeAGuide";
 import FeatureDestination from "@/src/components/home/FeatureDestination";
 import HeroSection from "@/src/components/home/HeroSection";
+import AboutPage from "./about/page";
+import PrivacyPage from "./privacy/page";
 
 export default function HomePage() {
   return (
@@ -18,6 +20,14 @@ export default function HomePage() {
       {/* Call to Action */}
      <section className="text-center py-20">
         <BecomeAGuide></BecomeAGuide>
+      </section>
+ 
+     <section className="text-center py-20">
+        <AboutPage></AboutPage>
+      </section>
+    
+     <section className="max-lg:mx-10">
+        <PrivacyPage></PrivacyPage>
       </section>
     </div>
   );
