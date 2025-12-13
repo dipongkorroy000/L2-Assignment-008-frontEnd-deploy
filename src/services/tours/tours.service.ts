@@ -154,4 +154,16 @@ export const completedRequestedTours = async () => {
   }
 };
 
+export const completedToursReviewProvide = async () => {
+  try {
+    const req = await server_fetch.get("/request-tour/completed-review-tours");
+    const result = await req.json();
 
+    return result;
+  } catch (error: any) {
+    return {
+      success: false,
+      message: process.env.NODE_ENV === "development" ? error.message : "Failed Data Fetching",
+    };
+  }
+};
