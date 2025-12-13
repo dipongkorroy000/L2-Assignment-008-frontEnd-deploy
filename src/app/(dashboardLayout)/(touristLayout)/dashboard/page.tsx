@@ -9,7 +9,6 @@ const TouristDashboardPage = async () => {
 
   //   const demodeta = [{id: 4, status: "COMPLETED", tour: {title: "title provide"}, guide: {name: "Abul kalam"}, updatedAt: new Date()}];
 
-  console.log(data);
   return (
     <div>
       <ReviewCreateComponent data={data}></ReviewCreateComponent>

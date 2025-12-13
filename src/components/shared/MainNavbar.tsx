@@ -81,6 +81,11 @@ const Navbar = async () => {
                       </Button>
                     </Link>
                   )}
+                  {profile && (
+                    <Link href={dashboardPath} className="hover:text-primary transition-colors text-lg">
+                      Dashboard
+                    </Link>
+                  )}
                 </div>
               </nav>
             </SheetContent>
