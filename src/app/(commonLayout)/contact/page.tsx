@@ -1,21 +1,19 @@
-import ContactBtn from "@/src/components/static/ContactBtn";
 import {Card, CardHeader, CardTitle, CardContent} from "@/src/components/ui/card";
-import {Input} from "@/src/components/ui/input";
-import {Textarea} from "@/src/components/ui/textarea";
 import {Mail, Phone, MapPin} from "lucide-react";
+import ContactForm from "@/src/components/shared/ContactForm";
 
 const ContactPage = () => {
   return (
     <section className="max-w-5xl mx-auto py-12 space-y-10">
       {/* Page Header */}
       <div className="text-center space-y-2">
-        <h1 className="text-3xl font-bold text-primary max-lg:text-2xl">Contact Us</h1>
-        <p className="text-muted-foreground max-lg:mx-10">We’d love to hear from you. Reach out anytime!</p>
+        <h1 className="text-3xl font-bold">Contact Us</h1>
+        <p className="text-muted-foreground">We’d love to hear from you. Reach out anytime!</p>
       </div>
 
       {/* Contact Info Cards */}
       <div className="grid gap-6 md:grid-cols-3">
-        <Card className="shadow-md max-lg:mx-5">
+        <Card className="shadow-md">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Mail className="h-5 w-5 text-primary" /> Email
@@ -26,7 +24,7 @@ const ContactPage = () => {
           </CardContent>
         </Card>
 
-        <Card className="shadow-md max-lg:mx-5">
+        <Card className="shadow-md">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Phone className="h-5 w-5 text-primary" /> Phone
@@ -37,7 +35,7 @@ const ContactPage = () => {
           </CardContent>
         </Card>
 
-        <Card className="shadow-md max-lg:mx-5">
+        <Card className="shadow-md">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <MapPin className="h-5 w-5 text-primary" /> Address
@@ -50,23 +48,7 @@ const ContactPage = () => {
       </div>
 
       {/* Contact Form */}
-      <Card className="shadow-md max-lg:mx-5">
-        <CardHeader>
-          <CardTitle>Send us a message</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div className="space-y-2">
-            <Input placeholder="Your Name" />
-          </div>
-          <div className="space-y-2">
-            <Input type="email" placeholder="Your Email" />
-          </div>
-          <div className="space-y-2">
-            <Textarea placeholder="Your Message" rows={5} />
-          </div>
-          <ContactBtn></ContactBtn>
-        </CardContent>
-      </Card>
+      <ContactForm></ContactForm>
     </section>
   );
 };
