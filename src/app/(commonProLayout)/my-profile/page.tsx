@@ -6,7 +6,7 @@ const ProfilePage = async () => {
   const userInfo = await getProfile();
 
   return (
-    <section className="bg-gray-100 min-h-screen py-8 px-20">
+    <section className="bg-gray-100 min-h-screen py-8 px-20 max-md:px-5">
       <MyProfile userInfo={userInfo}></MyProfile>
 
       <div className="my-10">

@@ -96,7 +96,7 @@ const MyProfile = ({userInfo}: MyProfileProps) => {
   };
 
   return (
-    <div className="space-y-6">
+      <div className="space-y-6">
       {/* Page Header */}
       <div>
         <Link href={"/"}>
@@ -105,11 +105,11 @@ const MyProfile = ({userInfo}: MyProfileProps) => {
       </div>
 
       <form onSubmit={handleSubmit}>
-        <div className="grid grid-cols-16">
-          <div className="col-span-5 flex flex-col gap-10">
+        <div className="flex max-xl:flex-col">
+          <div className="flex flex-col gap-10 w-full">
             {/* Profile Card */}
-            <Card className="lg:col-span-1 shadow-md rounded-xl">
-              <CardContent className="flex justify-around items-center">
+            <Card className="lg:col-span-1 shadow-md rounded-xl w-full">
+              <CardContent className="flex max-md:flex-col justify-around items-center">
                 <div className="flex flex-col items-center">
                   <div className="relative group">
                     <Avatar className="h-32 w-32 ring-2 ring-primary">
@@ -127,6 +127,7 @@ const MyProfile = ({userInfo}: MyProfileProps) => {
                       <Input type="file" id="file" name="file" accept="image/*" className="hidden" onChange={handleImageChange} disabled={isPending} />
                     </label>
                   </div>
+
                   <div className="text-center space-y-1">
                     <p className="font-semibold text-lg mt-3">{userInfo?.name}</p>
                     <span className="inline-block text-sm bg-muted px-3 py-1 rounded-full capitalize text-primary">{userInfo?.role.replace("_", " ")}</span>
@@ -142,9 +143,9 @@ const MyProfile = ({userInfo}: MyProfileProps) => {
               </CardContent>
             </Card>
 
-            <Card className="lg:col-span-1 p-10 border-none shadow-none">
+            <Card className="lg:col-span-1 p-10 max-md:p-1 max-md:gap-2 max-md:py-5 border-none shadow-none">
               <CardHeader>
-                <CardTitle className="text-xl">
+                <CardTitle className="text-xl max-md:text-sm">
                   See {userInfo?.name}&apos;s confirmed <br /> information
                 </CardTitle>
               </CardHeader>
@@ -162,7 +163,7 @@ const MyProfile = ({userInfo}: MyProfileProps) => {
                     <Check />
                     Verified Email
                   </p>
-                  <p className="text-sm text-muted-foreground flex items-center gap-2">
+                  <p className="text-sm text-muted-foreground flex items-center gap-2 max-md:gap-1">
                     <Check />
                     Languages: {languages?.join(", ") || "N/A"}
                   </p>
@@ -170,10 +171,9 @@ const MyProfile = ({userInfo}: MyProfileProps) => {
               </CardContent>
             </Card>
           </div>
-          <div className="col-span-1"></div>
 
           {/* Profile Information Card */}
-          <Card className="col-span-10 border-none shadow-none bg-accent p-10">
+          <Card className="border-none shadow-none bg-accent p-10 w-full max-md:p-0 max-md:py-10 max-md:gap-5">
             <CardHeader>
               <CardTitle>Personal Information</CardTitle>
             </CardHeader>
