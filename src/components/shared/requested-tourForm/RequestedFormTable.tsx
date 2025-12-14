@@ -7,7 +7,7 @@ import {Button} from "@/src/components/ui/button";
 import {ITourForm, TOUR_FROM_STATUS} from "@/src/types/requestedTourForm.interface";
 import {updateRequestedFormStatus} from "@/src/services/tours/tours.service";
 import {toast} from "sonner";
-import { paymentInit } from "@/src/services/guide/payment.service";
+import {paymentInit} from "@/src/services/guide/payment.service";
 
 export default function RequestedFormTable({data}: {data: ITourForm[]}) {
   const [open, setOpen] = useState(false);
@@ -47,11 +47,12 @@ export default function RequestedFormTable({data}: {data: ITourForm[]}) {
 
   const handlePayment = async () => {
     if (!selectedId) return;
-    console.log("Payment clicked for tourForm:", selectedId);
+    // console.log("Payment clicked for tourForm:", selectedId);
 
     const paymentInitiate = await paymentInit(selectedId);
+    if (paymentInitiate?.data?.paymentUrl) window.open(paymentInitiate?.data?.paymentUrl);
 
-    console.log(paymentInitiate);
+    // console.log(paymentInitiate);
 
     setOpen(false);
   };
@@ -102,7 +103,11 @@ export default function RequestedFormTable({data}: {data: ITourForm[]}) {
             <Button variant="destructive" className="cursor-pointer" onClick={handleCancel}>
               Cancel Request
             </Button>
-            {selectedStatus === TOUR_FROM_STATUS.CONFIRMED && <Button onClick={handlePayment} className="cursor-pointer">Payment</Button>}
+            {selectedStatus === TOUR_FROM_STATUS.CONFIRMED && (
+              <Button onClick={handlePayment} className="cursor-pointer">
+                Payment
+              </Button>
+            )}
           </DialogFooter>
         </DialogContent>
       </Dialog>

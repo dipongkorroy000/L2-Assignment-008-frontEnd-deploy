@@ -38,7 +38,7 @@ interface ITour {
   guide: Guide;
   image: string;
   meetingPoint: string;
- requestForm: RequestForm[];
+  requestForm: RequestForm[];
   title: string;
 }
 
@@ -130,16 +130,19 @@ const TourDetails = async ({params}: {params: Promise<{tourId: string}>}) => {
             <p>
               <strong className="text-primary">Average Rating: </strong> {tour.averageRating}
             </p>
-             {tour.requestForm?.length > 0 ? (
-              tour.requestForm.map((form, idx) => (
-                <div key={idx} className="space-y-3 border p-5 rounded-sm w-full mb-2">
-                  <div className="flex items-center justify-between">
-                    <Badge variant="secondary">⭐ {form.review.rating / 10}</Badge>
-                    <p className="bg-chart-1 px-3 rounded-sm">{form.tourist.email}</p>
-                  </div>
-                  <p className="p-2">{form.review.comment}</p>
-                </div>
-              ))
+            {tour.requestForm?.length > 0 ? (
+              tour.requestForm.map(
+                (form, idx) =>
+                  form.review && (
+                    <div key={idx} className="space-y-3 border p-5 rounded-sm w-full mb-2">
+                      <div className="flex items-center justify-between">
+                        <Badge variant="secondary">⭐ {form.review?.rating / 5}</Badge>
+                        <p className="bg-chart-1 px-3 rounded-sm">{form.tourist.email}</p>
+                      </div>
+                      <p className="p-2">{form.review?.comment}</p>
+                    </div>
+                  )
+              )
             ) : (
               <p className="text-muted-foreground">No reviews yet.</p>
             )}
