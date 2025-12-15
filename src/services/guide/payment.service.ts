@@ -1,3 +1,4 @@
+"use server";
 import {server_fetch} from "@/src/lib/server-fetch";
 
 export const paymentInit = async (id: number) => {
@@ -6,6 +7,8 @@ export const paymentInit = async (id: number) => {
     const result = await res.json();
 
     // revalidateTag("get-tours", {expire: 0}); // recall tours
+
+    // console.log(result);
 
     return result;
   } catch (error) {
