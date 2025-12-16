@@ -4,7 +4,7 @@ import React from "react";
 
 const GuideRequestedToursPage = async () => {
   const requestedToursForm = await getRequestedForm();
-
+console.log(requestedToursForm);
   return (
     <>
       <RequestedToursTable data={requestedToursForm.data}></RequestedToursTable>

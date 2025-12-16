@@ -98,7 +98,7 @@ export default function RequestedToursTable({data}: {data: ITourForm[]}) {
             <TableRow
               key={idx}
               className="cursor-pointer hover:bg-muted/50"
-              onClick={() => handleRowClick(item.id, item.comment, item.status, item.payments.status)}
+              onClick={() => handleRowClick(item.id, item.comment, item.status, item.payments?.status)}
             >
               <TableCell>{item.tour?.title}</TableCell>
               <TableCell>{item.status}</TableCell>

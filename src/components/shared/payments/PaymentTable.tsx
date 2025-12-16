@@ -2,7 +2,7 @@ import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/s
 import {ITourPayment} from "@/src/types/payment.interface";
 
 const PaymentTable = ({data}: {data: ITourPayment[]}) => {
-  data.map((item) => console.log(item.payments));
+
   return (
     <Table>
       <TableHeader>
@@ -15,7 +15,7 @@ const PaymentTable = ({data}: {data: ITourPayment[]}) => {
       </TableHeader>
 
       <TableBody>
-        {data.map((item: ITourPayment, idx: number) => (
+        {data?.map((item: ITourPayment, idx: number) => (
           <TableRow key={idx}>
             <TableCell>{item.payments.transactionId}</TableCell>
             <TableCell>{item.payments.amount} BDT</TableCell>
