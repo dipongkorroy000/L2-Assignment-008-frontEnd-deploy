@@ -34,7 +34,6 @@ export default function UpcomingToursTable({data, role}: {data: UpcomingTour[]; 
             {(role === "TOURIST" || role === "ADMIN") && <TableHead>Guide Contact</TableHead>}
             {(role === "GUIDE" || role === "ADMIN") && <TableHead>Tourist Contact</TableHead>}
             <TableHead>Tour Date</TableHead>
-            <TableHead>Actions</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -49,11 +48,6 @@ export default function UpcomingToursTable({data, role}: {data: UpcomingTour[]; 
                 {(role === "TOURIST" || role === "ADMIN") && <TableCell>{item.tour.guide?.contactNumber}</TableCell>}
                 {(role === "GUIDE" || role === "ADMIN") && <TableCell>{item.tourist?.contactNumber}</TableCell>}
                 <TableCell>{new Date(item.tourDate).toLocaleDateString("en-GB")}</TableCell>
-                <TableCell>
-                  <Button variant="outline" size="sm" onClick={() => console.log("View tour:", item.tour.id)}>
-                    View
-                  </Button>
-                </TableCell>
               </TableRow>
             ))
           ) : (

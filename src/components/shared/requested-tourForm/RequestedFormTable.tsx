@@ -47,12 +47,9 @@ export default function RequestedFormTable({data}: {data: ITourForm[]}) {
 
   const handlePayment = async () => {
     if (!selectedId) return;
-    // console.log("Payment clicked for tourForm:", selectedId);
 
     const paymentInitiate = await paymentInit(selectedId);
     if (paymentInitiate.data.paymentUrl) window.open(paymentInitiate.data.paymentUrl);
-
-    // console.log(paymentInitiate);
 
     setOpen(false);
   };

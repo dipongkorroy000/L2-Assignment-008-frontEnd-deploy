@@ -14,7 +14,6 @@ const DeleteCategory = ({id, tourCount}: {id: number; tourCount: number}) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        console.log(id);
         Swal.fire({
           title: "Deleted!",
           text: "Your file has been deleted.",
