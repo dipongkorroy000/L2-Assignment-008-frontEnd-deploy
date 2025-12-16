@@ -67,7 +67,7 @@ const ContactForm = () => {
         <Input type="email" placeholder="Your Email" value={email} onChange={(e) => setEmail(e.target.value)} />
       </div>
       <div className="space-y-2">
-        <Textarea placeholder="Your Message" rows={5} value={message} onChange={(e) => setMessage(e.target.value)} />
+        <Textarea placeholder="Your Message" className="h-48" value={message} onChange={(e) => setMessage(e.target.value)} />
       </div>
       <Button onClick={handleSubmit} disabled={loading} className="w-full">
         {loading ? "Sending..." : "Send Message"}

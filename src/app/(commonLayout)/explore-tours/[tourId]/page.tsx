@@ -50,13 +50,13 @@ const TourDetails = async ({params}: {params: Promise<{tourId: string}>}) => {
   const tour: ITour = await getTour(Number(tourId));
 
   return (
-    <section className="py-20">
-      <div className="max-w-4xl mx-auto">
-        <Card className="shadow-lg">
+    <section className="py-20 bg-gradient-to-r from-primary-foreground via-white to-primary-foreground">
+      <div className="max-w-4xl mx-auto bg-clip-border">
+        <Card className="shadow-sm bg-clip-border">
           {/* Tour Header */}
           <CardHeader>
-            <CardTitle className="text-2xl font-bold">{tour.category?.title}</CardTitle>
-            <CardDescription>
+            <CardTitle className="text-2xl font-bold text-chart-4">{tour.category?.title}</CardTitle>
+            <CardDescription className="text-black dark:text-white">
               • City: {tour.city} • Since from: {new Date(tour.createdAt).toLocaleDateString()}
             </CardDescription>
           </CardHeader>
@@ -65,26 +65,25 @@ const TourDetails = async ({params}: {params: Promise<{tourId: string}>}) => {
           <CardContent>
             <Image width={300} height={300} src={tour.image} alt={tour.title || "tour image"} className="w-full h-64 object-cover rounded-md mb-6" />
 
-            <p className="text-xl font-bold mb-4 text-chart-3">{tour.title}</p>
+            <p className="text-xl font-bold mb-4">{tour.title}</p>
             <p className="text-muted-foreground mb-2">{tour.description}</p>
 
             <div className="space-y-2">
               <p>
-                <strong className="text-primary">Destination: </strong> {tour.destination}
+                <strong>Destination: </strong> {tour.destination}
               </p>
               <p>
-                <strong className="text-primary">Meeting Point: </strong> {tour.meetingPoint}
-              </p>
-
-              <p>
-                <strong className="text-primary">Max Group Size: </strong> {tour.groupMembers}
+                <strong>Meeting Point: </strong> {tour.meetingPoint}
               </p>
               <p>
-                <strong className="text-primary">Duration: </strong>
+                <strong>Max Group Size: </strong> {tour.groupMembers}
+              </p>
+              <p>
+                <strong>Duration: </strong>
                 {tour.duration}
               </p>
               <div className="flex gap-5 items-center">
-                <strong className="text-primary">Languages: </strong>
+                <strong>Languages: </strong>
                 {tour.guide.languages.map((language, idx) => (
                   <p key={idx} className="border rounded-2xl px-3 py-1">
                     {language}
@@ -125,11 +124,13 @@ const TourDetails = async ({params}: {params: Promise<{tourId: string}>}) => {
           </CardContent>
 
           {/* Reviews */}
-          <CardFooter className="flex flex-col items-start gap-2">
-            <h3 className="text-lg font-semibold">Reviews</h3>
-            <p>
-              <strong className="text-primary">Average Rating: </strong> {tour.averageRating}
-            </p>
+          <CardFooter className="flex flex-col items-start gap-2 py-10">
+            <div className="">
+              <h3 className="text-lg font-semibold">Reviews</h3>
+              <p>
+                <strong>Average Rating: </strong> {tour.averageRating}
+              </p>
+            </div>
             {tour.requestForm?.length > 0 ? (
               tour.requestForm.map(
                 (form, idx) =>
@@ -144,7 +145,7 @@ const TourDetails = async ({params}: {params: Promise<{tourId: string}>}) => {
                   )
               )
             ) : (
-              <p className="text-muted-foreground">No reviews yet.</p>
+              <p className="text-muted-foreground mt-5">No reviews yet.</p>
             )}
           </CardFooter>
         </Card>

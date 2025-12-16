@@ -26,7 +26,7 @@ export default function HomePage() {
       </section>
 
       {/* Call to Action */}
-      <section className="text-center py-20">
+      <section className="text-center pb-32">
         <BecomeAGuide></BecomeAGuide>
       </section>
     </div>

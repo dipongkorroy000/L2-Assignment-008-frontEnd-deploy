@@ -14,10 +14,12 @@ const FindTour = async ({searchParams}: {searchParams: Promise<{[key: string]: s
   const data = tour.data?.data || [];
 
   return (
-    <section className="max-w-7xl mx-auto">
-      {categories && <FilterTours categories={categories.data}></FilterTours>}
+    <section className="bg-gradient-to-r from-primary-foreground via-white to-primary-foreground">
+      <div className="max-w-7xl mx-auto min-h-dvh py-20 space-y-20">
+        {categories && <FilterTours categories={categories.data}></FilterTours>}
 
-      <Tours tours={data} />
+        <Tours tours={data} />
+      </div>
     </section>
   );
 };
