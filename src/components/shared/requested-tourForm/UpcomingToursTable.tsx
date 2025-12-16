@@ -1,3 +1,5 @@
+"use client";
+
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/src/components/ui/table";
 import {Button} from "@/src/components/ui/button";
 
@@ -6,7 +8,7 @@ interface UpcomingTour {
     id: number;
     title: string;
     groupMembers: number;
-    category: string;
+    category: {title: string};
     guide?: {
       contactNumber: string;
       email: string;
@@ -41,7 +43,7 @@ export default function UpcomingToursTable({data, role}: {data: UpcomingTour[]; 
               <TableRow key={idx}>
                 <TableCell>{item.tour.title}</TableCell>
                 <TableCell>{item.tour.groupMembers}</TableCell>
-                <TableCell>{item.tour.category}</TableCell>
+                <TableCell>{item.tour.category.title}</TableCell>
                 {(role === "TOURIST" || role === "ADMIN") && <TableCell>{item.tour.guide?.email}</TableCell>}
                 {(role === "GUIDE" || role === "ADMIN") && <TableCell>{item.tourist?.email}</TableCell>}
                 {(role === "TOURIST" || role === "ADMIN") && <TableCell>{item.tour.guide?.contactNumber}</TableCell>}

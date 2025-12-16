@@ -6,6 +6,8 @@ import {Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter} from "@/
 import {Button} from "@/src/components/ui/button";
 import {Textarea} from "@/src/components/ui/textarea";
 import {createReview} from "@/src/services/tourist/tourist.service";
+import {DialogDescription} from "@radix-ui/react-dialog";
+import {toast} from "sonner";
 
 interface IRequestedForm {
   id: number;
@@ -28,15 +30,11 @@ const ReviewCreateComponent = ({data}: {data: IRequestedForm[]}) => {
   };
 
   const handleSubmit = async () => {
-    console.log("Submitting review:", {
-      requestedFormId: selectedTourFormId,
-      rating,
-      comment,
-    });
-    // TODO: call backend API to save review
-
+    if (!rating) return toast.error("Please rating provide");
+    if (!comment) return toast.error("Please comment provide");
     const result = await createReview(selectedTourFormId, {rating, comment});
-    console.log(result);
+
+    if (result.success) toast.success("Review submit successfully");
 
     setOpen(false);
     setRating(0);
@@ -44,20 +42,20 @@ const ReviewCreateComponent = ({data}: {data: IRequestedForm[]}) => {
   };
 
   return (
-    <div className="max-w-5xl mx-auto py-10 space-y-6">
+    <div className="max-w-7xl mx-auto py-10 space-y-6">
       <h2 className="text-2xl font-bold">Provide Reviews</h2>
 
       {/* Table */}
-      <Table className="shadow-md border rounded-md">
+      <Table>
         <TableHeader>
           <TableRow>
-            <TableHead>requestedForm Title</TableHead>
+            <TableHead>Title</TableHead>
             <TableHead>Status</TableHead>
             <TableHead>Guide</TableHead>
             <TableHead>Updated At</TableHead>
           </TableRow>
         </TableHeader>
-        <TableBody>
+        <TableBody className="">
           {data.length > 0 ? (
             data.map((requestedForm) => (
               <TableRow key={requestedForm.id} className="cursor-pointer hover:bg-muted/50" onClick={() => handleRowClick(requestedForm.id)}>
@@ -82,6 +80,7 @@ const ReviewCreateComponent = ({data}: {data: IRequestedForm[]}) => {
         <DialogContent>
           <DialogHeader>
             <DialogTitle>Provide Review</DialogTitle>
+            <DialogDescription>Provide review your completed tours</DialogDescription>
           </DialogHeader>
 
           <div className="space-y-4">

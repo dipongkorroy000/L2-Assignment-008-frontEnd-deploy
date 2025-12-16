@@ -6,9 +6,9 @@ const GuideDashboardPage = async () => {
   const stats = await guideStats();
   const data = stats?.data?.meta ?? {totalEarning: 0, completedTours: 0};
   const tours = (await getTours()) ?? {data: {meta: {total: 0}}};
-  const reviews = (await getReviews()) ?? {data: []};
+  const tourForms = await getReviews();
 
-  return <GuideDashboardComponent data={data} tours={tours.data} reviews={reviews.data}></GuideDashboardComponent>;
+  return <GuideDashboardComponent data={data} tours={tours.data} tourForms={tourForms.data || []}></GuideDashboardComponent>;
 };
 
 export default GuideDashboardPage;

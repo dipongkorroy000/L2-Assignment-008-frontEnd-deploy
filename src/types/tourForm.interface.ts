@@ -27,5 +27,5 @@ export interface ICompletedTours {
     contactNumber: string;
     email: string;
   };
-  date: string; // ISO date string
+  updatedAt: string; // ISO date string
 }

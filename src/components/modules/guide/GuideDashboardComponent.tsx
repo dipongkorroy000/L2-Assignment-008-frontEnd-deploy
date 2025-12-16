@@ -4,15 +4,16 @@ import {ReviewsList} from "./ReviewList";
 interface IGuideDashboardProps {
   data: {totalEarning: number; completedTours: number};
   tours: {meta: {total: number}};
-  reviews: {
-    comment: string;
-    rating: number;
-    updatedAt: string;
+  tourForms: {
+    review: {
+      comment: string;
+      rating: number;
+      updatedAt: string;
+    };
   }[];
 }
 
-const GuideDashboardComponent = async ({data, tours, reviews}: IGuideDashboardProps) => {
-  console.log("reviews", reviews);
+const GuideDashboardComponent = async ({data, tours, tourForms}: IGuideDashboardProps) => {
 
   return (
     <div className="max-w-7xl mx-auto space-y-6">
@@ -48,8 +49,10 @@ const GuideDashboardComponent = async ({data, tours, reviews}: IGuideDashboardPr
         </Card>
       </div>
 
+      <ReviewsList tourForms={tourForms} ></ReviewsList>
+
       {/* Reviews Section */}
-      <ReviewsList reviews={reviews || []} />
+      {/* <ReviewsList tourForms={tourForms || []} /> */}
     </div>
   );
 };

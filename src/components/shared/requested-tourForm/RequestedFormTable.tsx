@@ -50,7 +50,7 @@ export default function RequestedFormTable({data}: {data: ITourForm[]}) {
     // console.log("Payment clicked for tourForm:", selectedId);
 
     const paymentInitiate = await paymentInit(selectedId);
-    if (paymentInitiate?.data?.paymentUrl) window.open(paymentInitiate?.data?.paymentUrl);
+    if (paymentInitiate.data.paymentUrl) window.open(paymentInitiate.data.paymentUrl);
 
     // console.log(paymentInitiate);
 
@@ -105,7 +105,7 @@ export default function RequestedFormTable({data}: {data: ITourForm[]}) {
             </Button>
             {selectedStatus === TOUR_FROM_STATUS.CONFIRMED && (
               <Button onClick={handlePayment} className="cursor-pointer">
-                Payment
+                Payment Now
               </Button>
             )}
           </DialogFooter>

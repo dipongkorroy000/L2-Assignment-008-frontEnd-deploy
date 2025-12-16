@@ -2,6 +2,7 @@ import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/s
 import {ICompletedTours} from "@/src/types/tourForm.interface";
 
 const CompletedToursComponent = ({data}: {data: ICompletedTours[]}) => {
+  console.log(data);
   return (
     <div className="max-w-6xl mx-auto my-10">
       <h2 className="text-2xl font-bold mb-6">Completed Tours</h2>
@@ -26,7 +27,7 @@ const CompletedToursComponent = ({data}: {data: ICompletedTours[]}) => {
                 {item.guide && <TableCell>{item.guide?.email}</TableCell>}
                 {item.guide && <TableCell>{item.guide?.contactNumber}</TableCell>}
                 <TableCell>{item.status}</TableCell>
-                <TableCell>{new Date(item.date).toLocaleDateString("en-GB")}</TableCell>
+                <TableCell>{new Date(item.updatedAt).toLocaleDateString("en-GB")}</TableCell>
               </TableRow>
             ))
           ) : (

@@ -6,5 +6,5 @@ export interface IPayment {
 }
 
 export interface ITourPayment {
-  payments: IPayment[];
+  payments: IPayment;
 }
