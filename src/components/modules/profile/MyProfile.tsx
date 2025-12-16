@@ -49,9 +49,15 @@ const MyProfile = ({userInfo}: MyProfileProps) => {
   const diffYears = Math.floor(diffDays / 365); // rough year calc
 
   let memberSince = "";
-  if (diffYears > 0) memberSince = `${diffYears} Years`;
-  else if (diffMonths > 0) memberSince = `${diffMonths} Months`;
-  else if (diffDays > 0) memberSince = `${diffDays} Days`;
+  if (diffYears > 0) {
+    memberSince = `${diffYears} Years`;
+  } else if (diffMonths > 0) {
+    memberSince = `${diffMonths} Months`;
+  } else if (diffDays > 0) {
+    memberSince = `${diffDays} Days`;
+  } else {
+    memberSince = "Today"; // fallback for same-day creation
+  }
 
   const languages = userInfo?.role === "GUIDE" || userInfo?.role === "TOURIST" ? userInfo.guide?.languages || userInfo.tourist?.languages : [];
 
@@ -96,7 +102,7 @@ const MyProfile = ({userInfo}: MyProfileProps) => {
   };
 
   return (
-      <div className="space-y-6">
+    <div className="space-y-6">
       {/* Page Header */}
       <div>
         <Link href={"/"}>
@@ -105,7 +111,7 @@ const MyProfile = ({userInfo}: MyProfileProps) => {
       </div>
 
       <form onSubmit={handleSubmit}>
-        <div className="flex max-xl:flex-col">
+        <div className="flex max-xl:flex-col gap-10">
           <div className="flex flex-col gap-10 w-full">
             {/* Profile Card */}
             <Card className="lg:col-span-1 shadow-md rounded-xl w-full">
@@ -134,9 +140,9 @@ const MyProfile = ({userInfo}: MyProfileProps) => {
                   </div>
                 </div>
 
-                <div className="space-y-1">
+                <div>
                   <span>
-                    <span className="text-3xl">{memberSince}</span>
+                    <strong className="text-3xl text-chart-4">{memberSince}</strong>
                     <br /> on Local Guide
                   </span>
                 </div>
@@ -173,7 +179,7 @@ const MyProfile = ({userInfo}: MyProfileProps) => {
           </div>
 
           {/* Profile Information Card */}
-          <Card className="border-none shadow-none bg-accent p-10 w-full max-md:p-0 max-md:py-10 max-md:gap-5">
+          <Card className="border-none shadow-none bg-secondary p-10 w-full max-md:p-0 max-md:py-10 max-md:gap-5">
             <CardHeader>
               <CardTitle>Personal Information</CardTitle>
             </CardHeader>
