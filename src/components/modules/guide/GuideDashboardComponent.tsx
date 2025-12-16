@@ -10,11 +10,11 @@ interface IGuideDashboardProps {
       rating: number;
       updatedAt: string;
     };
+    tour: {title: string};
   }[];
 }
 
 const GuideDashboardComponent = async ({data, tours, tourForms}: IGuideDashboardProps) => {
-
   return (
     <div className="max-w-7xl mx-auto space-y-6">
       <h2 className="text-2xl font-bold">Guide Dashboard</h2>
@@ -49,7 +49,7 @@ const GuideDashboardComponent = async ({data, tours, tourForms}: IGuideDashboard
         </Card>
       </div>
 
-      <ReviewsList tourForms={tourForms} ></ReviewsList>
+      <ReviewsList tourForms={tourForms}></ReviewsList>
 
       {/* Reviews Section */}
       {/* <ReviewsList tourForms={tourForms || []} /> */}
