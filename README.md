@@ -4,6 +4,11 @@ A **Next.js + React** frontend application built with modern UI libraries and de
 This project demonstrates clean architecture, reusable components, and professional UI/UX practices using **Radix UI**, **TailwindCSS**, and **TypeScript**.
 
 ---
+## 🌐 Live 
+
+👉 [View the application here](https://l2-assignment-008-frontend-577l.vercel.app/)
+
+---
 
 ## 🚀 Features
 
