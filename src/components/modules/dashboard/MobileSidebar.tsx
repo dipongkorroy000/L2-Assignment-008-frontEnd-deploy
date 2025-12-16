@@ -14,18 +14,17 @@ import {getLucideIcon} from "@/src/lib/getLucideIcon";
 interface DashboardMobileSidebarContentProps {
   userInfo: IUserProfile;
   navItems: NavSection[];
-  dashboardHome: string;
 }
 
-const DashboardMobileSidebar = ({userInfo, navItems, dashboardHome}: DashboardMobileSidebarContentProps) => {
+const DashboardMobileSidebar = ({userInfo, navItems,}: DashboardMobileSidebarContentProps) => {
   const pathname = usePathname();
 
   return (
     <div className=" flex h-full flex-col">
       {/* Logo */}
       <div className="flex h-16 items-center border-b px-6">
-        <Link href={dashboardHome}>
-          <span className="text-xl font-bold text-primary">PH Healthcare</span>
+        <Link href="/">
+          <span className="text-xl font-bold text-primary">Local Guide</span>
         </Link>
       </div>
       <SheetTitle className="sr-only">Navigation Menu</SheetTitle>

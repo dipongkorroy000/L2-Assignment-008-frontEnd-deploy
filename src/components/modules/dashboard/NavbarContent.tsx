@@ -15,7 +15,7 @@ interface DashboardNavbarContentProps {
   dashboardHome?: string;
 }
 
-const NavbarContent = ({userInfo, navItems, dashboardHome}: DashboardNavbarContentProps) => {
+const NavbarContent = ({userInfo, navItems}: DashboardNavbarContentProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -27,7 +27,6 @@ const NavbarContent = ({userInfo, navItems, dashboardHome}: DashboardNavbarConte
 
     return () => window.removeEventListener("resize", checkSmallerScreen);
   }, []);
-
 
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur">
@@ -41,14 +40,12 @@ const NavbarContent = ({userInfo, navItems, dashboardHome}: DashboardNavbarConte
           </SheetTrigger>
           {/* Hide the overlay on medium and larger screens */}
           <SheetContent side="left" className="w-64 p-0">
-            <MobileSidebar userInfo={userInfo} navItems={navItems || []} dashboardHome={dashboardHome || ""} />
+            <MobileSidebar userInfo={userInfo} navItems={navItems || []} />
           </SheetContent>
         </Sheet>
 
         {/* Search Bar */}
-        <div className="flex-1">
-         
-        </div>
+        <div className="flex-1"></div>
 
         {/* Right Side Actions */}
         <div className="flex items-center gap-2">
