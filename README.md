@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎨 Local Guide Client
 
-## Getting Started
+A **Next.js + React** frontend application built with modern UI libraries and developer tooling.  
+This project demonstrates clean architecture, reusable components, and professional UI/UX practices using **Radix UI**, **TailwindCSS**, and **TypeScript**.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Next.js 16** – Fast, production-ready React framework
+- **TypeScript** – Strongly typed development for reliability
+- **TailwindCSS v4** – Utility-first styling with modern animations
+- **Radix UI** – Accessible, headless UI components
+- **React Hook Form + Zod** – Form handling with schema validation
+- **Framer Motion** – Smooth animations and transitions
+- **Lucide Icons** – Modern, customizable icon set
+- **SweetAlert2 & Sonner** – Elegant alerts and toast notifications
+- **JWT Support** – Authentication-ready with `jsonwebtoken`
+- **Date-fns** – Lightweight date utilities
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📦 Tech Stack
 
-## Learn More
+- **Framework:** Next.js 16
+- **Language:** TypeScript
+- **UI:** Radix UI, TailwindCSS, Framer Motion
+- **Forms & Validation:** React Hook Form, Zod
+- **State & Utilities:** clsx, class-variance-authority, tailwind-merge
+- **Notifications:** SweetAlert2, Sonner
+- **Icons:** Lucide React
+- **Date Handling:** date-fns
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📂 Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## ⚙️ Scripts
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Command        | Description                          |
+|----------------|--------------------------------------|
+| `pnpm dev`     | Run development server               |
+| `pnpm build`   | Build production-ready app           |
+| `pnpm start`   | Start production server              |
+| `pnpm lint`    | Run ESLint for code quality checks   |
+
+---
+
+## 🔑 Environment Variables
+
+Create a `.env.local` file in the project root:
+
+```env
+NEXT_PUBLIC_API_URL="http://localhost:5000/api"
+NEXT_PUBLIC_JWT_SECRET="your_jwt_secret"
