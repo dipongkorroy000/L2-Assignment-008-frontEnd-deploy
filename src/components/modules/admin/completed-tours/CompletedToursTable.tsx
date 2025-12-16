@@ -20,7 +20,7 @@ const CompletedToursTable = ({data}: {data: ICompletedTour[]}) => {
           <TableHead>Guide Email</TableHead>
           <TableHead>Tourist Email</TableHead>
           <TableHead>Transaction ID</TableHead>
-          <TableHead>Updated At</TableHead>
+          <TableHead>Completed At</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>

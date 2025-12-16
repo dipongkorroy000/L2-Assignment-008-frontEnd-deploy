@@ -7,7 +7,7 @@ export interface IUpcomingTour {
     id: number;
     title: string;
     groupMembers: number;
-    category: string;
+    category: {title: string};
     guide: {
       email: string;
       contactNumber: string;
@@ -25,6 +25,7 @@ interface Props {
 }
 
 export default function UpcomingTourTable({tours}: Props) {
+  console.log(tours);
   return (
     <div className="mt-8">
       <Table>
@@ -45,7 +46,7 @@ export default function UpcomingTourTable({tours}: Props) {
             tours.map((tour, idx) => (
               <TableRow key={idx}>
                 <TableCell>{tour.tour.title}</TableCell>
-                <TableCell>{tour.tour.category}</TableCell>
+                <TableCell>{tour.tour.category.title}</TableCell>
                 <TableCell>{tour.tour.groupMembers}</TableCell>
                 <TableCell>{tour.tour.guide.email}</TableCell>
                 <TableCell>{tour.tour.guide.contactNumber}</TableCell>
