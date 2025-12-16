@@ -74,7 +74,7 @@ export const tourDeleteById = async (id: number) => {
 
     return result;
   } catch (error) {
-    console.log(error);
+    // console.log(error);
   }
 };
 

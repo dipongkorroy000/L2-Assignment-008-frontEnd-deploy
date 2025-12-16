@@ -10,7 +10,7 @@ export const createReview = async (requestedFormId: number, payload: {rating: nu
 
     return result;
   } catch (error) {
-    console.log(error);
+    // console.log(error);
   }
 };
 
@@ -24,7 +24,7 @@ export const postContactMessage = async (payload: {message: string; email: strin
 
     return result;
   } catch (error) {
-    console.log(error);
+    // console.log(error);
   }
 };
 
@@ -35,6 +35,6 @@ export const getMessages = async () => {
 
     return result;
   } catch (error) {
-    console.log(error);
+    // console.log(error);
   }
 };

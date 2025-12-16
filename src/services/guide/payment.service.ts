@@ -6,12 +6,8 @@ export const paymentInit = async (id: number) => {
     const res = await server_fetch.post(`/payment/${id}`);
     const result = await res.json();
 
-    // revalidateTag("get-tours", {expire: 0}); // recall tours
-
-    // console.log(result);
-
     return result;
   } catch (error) {
-    console.log(error);
+    // console.log(error);
   }
 };

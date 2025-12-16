@@ -35,7 +35,7 @@ export const registerGuide = async (_currentState: any, formData: any): Promise<
   } catch (error: any) {
     if (error?.digest?.startsWith("NEXT_REDIRECT")) throw error;
 
-    console.log(error);
+    // console.log(error);
     return {
       success: false,
       message: process.env.NODE_ENV === "development" ? error.message : "Registration failed. Please try again.",

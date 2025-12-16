@@ -87,7 +87,7 @@ export const loginUser = async (_currentState: any, formData: any): Promise<any>
   } catch (error: any) {
     if (error?.digest?.startsWith("NEXT_REDIRECT")) throw error;
 
-    console.log(error);
+    // console.log(error);
 
     return {
       success: false,

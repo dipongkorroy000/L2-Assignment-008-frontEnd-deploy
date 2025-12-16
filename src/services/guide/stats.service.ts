@@ -6,6 +6,6 @@ export const getReviews = async () => {
     const result = await res.json();
     return result;
   } catch (error) {
-    console.log(error);
+    // console.log(error);
   }
 };

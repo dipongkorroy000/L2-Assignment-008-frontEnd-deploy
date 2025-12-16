@@ -7,7 +7,7 @@ export const getAllUsers = async (queryString?: string) => {
 
     return result;
   } catch (error) {
-    console.log(error);
+    // console.log(error);
   }
 };
 
@@ -18,7 +18,7 @@ export const getUser = async (id: number) => {
 
     return result;
   } catch (error) {
-    console.log(error);
+    // console.log(error);
   }
 };
 
@@ -29,6 +29,6 @@ export const userStats = async () => {
 
     return result;
   } catch (error) {
-    console.log(error);
+    // console.log(error);
   }
 };
