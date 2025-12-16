@@ -92,6 +92,8 @@ const MyProfile = ({userInfo}: MyProfileProps) => {
     startTransition(async () => {
       const result = await updateProfile(formData);
 
+      console.log(result);
+
       if (result.success) {
         setSuccess(result.message);
         setPreviewImage(null);
@@ -185,9 +187,9 @@ const MyProfile = ({userInfo}: MyProfileProps) => {
             </CardHeader>
 
             <CardContent className="">
-              {error && <div className="bg-destructive/10 text-destructive px-4 py-3 rounded-md text-sm">{error}</div>}
+              {error && <div className="bg-destructive/10 text-destructive px-4 py-3 rounded-md text-sm mb-5">{error}</div>}
 
-              {success && <div className="bg-green-500/10 text-green-600 px-4 py-3 rounded-md text-sm">{success}</div>}
+              {success && <div className="bg-green-500/10 text-green-600 px-4 py-3 rounded-md text-sm mb-5">{success}</div>}
 
               <div className="grid gap-4 md:grid-cols-2">
                 {/* Common Fields for All Roles */}
