@@ -6,6 +6,8 @@ import Image from "next/image";
 import RequestModal from "@/src/components/modules/tours/RequestedTourModal";
 import {getCookie} from "@/src/utils/serverToken";
 import Link from "next/link";
+import {Button} from "@/src/components/ui/button";
+import BackBtn from "@/src/components/static/BackBtn";
 
 interface Guide {
   id: number;
@@ -50,12 +52,12 @@ const TourDetails = async ({params}: {params: Promise<{tourId: string}>}) => {
   const tour: ITour = await getTour(Number(tourId));
 
   return (
-    <section className="py-20 bg-gradient-to-r from-primary-foreground via-white to-primary-foreground">
+    <section className="py-20 bg-gradient-to-r from-primary-foreground via-white to-primary-foreground max-md:py-5 max-md:mx-5">
       <div className="max-w-4xl mx-auto bg-clip-border">
         <Card className="shadow-sm bg-clip-border">
           {/* Tour Header */}
           <CardHeader>
-            <CardTitle className="text-2xl font-bold text-chart-4">{tour.category?.title}</CardTitle>
+            <CardTitle className="text-2xl font-bold text-chart-4 max-md:text-xl">{tour.category?.title}</CardTitle>
             <CardDescription className="text-black dark:text-white">
               • City: {tour.city} • Since from: {new Date(tour.createdAt).toLocaleDateString()}
             </CardDescription>
@@ -63,12 +65,18 @@ const TourDetails = async ({params}: {params: Promise<{tourId: string}>}) => {
 
           {/* Tour Image */}
           <CardContent>
-            <Image width={300} height={300} src={tour.image} alt={tour.title || "tour image"} className="w-full h-64 object-cover rounded-md mb-6" />
+            <Image
+              width={300}
+              height={300}
+              src={tour.image}
+              alt={tour.title || "tour image"}
+              className="w-full h-64 object-cover rounded-md mb-6 max-md:mb-2 max-md:h-40"
+            />
 
-            <p className="text-xl font-bold mb-4">{tour.title}</p>
-            <p className="text-muted-foreground mb-2">{tour.description}</p>
+            <p className="text-xl font-bold max-md:text-lg">{tour.title}</p>
+            <p className="text-muted-foreground mb-5 max-md:text-sm">{tour.description}</p>
 
-            <div className="space-y-2">
+            <div className="space-y-2 max-md:space-y-1 max-md:text-sm">
               <p>
                 <strong>Destination: </strong> {tour.destination}
               </p>
@@ -95,7 +103,7 @@ const TourDetails = async ({params}: {params: Promise<{tourId: string}>}) => {
 
           {/* Guide Info */}
           <CardContent>
-            <h3 className="text-lg font-semibold mb-3">Guide Information</h3>
+            <h3 className="text-lg font-semibold mb-3 max-md:mb-1">Guide Information</h3>
             <div className="flex items-center gap-4">
               <Avatar>
                 <AvatarImage src={tour.guide?.profilePhoto} alt={tour.guide?.name} />
@@ -124,7 +132,7 @@ const TourDetails = async ({params}: {params: Promise<{tourId: string}>}) => {
           </CardContent>
 
           {/* Reviews */}
-          <CardFooter className="flex flex-col items-start gap-2 py-10">
+          <CardFooter className="flex flex-col items-start gap-2 py-10 max-md:py-5">
             <div className="">
               <h3 className="text-lg font-semibold">Reviews</h3>
               <p>
@@ -149,6 +157,10 @@ const TourDetails = async ({params}: {params: Promise<{tourId: string}>}) => {
             )}
           </CardFooter>
         </Card>
+      </div>
+
+      <div className="mt-5 max-w-4xl mx-auto bg-clip-border">
+        <BackBtn></BackBtn>
       </div>
     </section>
   );

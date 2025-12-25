@@ -13,11 +13,11 @@ interface CategoryGroup {
 
 const Tours = ({tours}: {tours: CategoryGroup[]}) => {
   return (
-    <div className="max-w-7xl mx-auto py-20">
+    <div className="max-w-7xl mx-auto py-20 max-md:py-5">
       {/* Search Button */}
-      <div className="bg-secondary px-5 py-2 rounded-2xl flex justify-end">
+      <div className="bg-secondary px-5 py-2 rounded-2xl flex justify-end max-md:mx-10">
         <Link href={"/find-tour"} className="flex text-chart-5 gap-1 items-center bg-white px-4 py-1 rounded-3xl hover:bg-chart-4 hover:text-white">
-          <strong className="text-xl">Search Tour</strong>
+          <strong className="text-xl max-md:text-lg">Search Tour</strong>
           <FileSearch size={30} className="cursor-pointer" />
         </Link>
       </div>

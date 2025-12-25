@@ -7,7 +7,7 @@ const ExploreToursPage = async () => {
   const toursData = tour?.data ?? [];
 
   return (
-    <section className="bg-gradient-to-r from-primary-foreground via-white to-primary-foreground">
+    <section className="bg-gradient-to-r from-primary-foreground via-white to-primary-foreground min-h-screen">
       <Tours tours={toursData}></Tours>
     </section>
   );

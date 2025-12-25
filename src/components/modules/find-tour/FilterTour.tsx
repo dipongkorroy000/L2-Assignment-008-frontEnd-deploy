@@ -41,35 +41,37 @@ const FilterTours = ({categories}: {categories: {id: number; title: string}[]}) 
   };
 
   return (
-    <div className="flex flex-col md:flex-row gap-4 items-center">
+    <div className="flex flex-col md:flex-row gap-4 items-center max-md:mx-5 max-md:items-start">
       {/* Search Box */}
-      <div className="flex items-center gap-2 w-full md:w-1/3">
+      <div className="flex items-center gap-2 w-72">
         <Search className="h-4 w-4 text-muted-foreground" />
-        <Input type="text" placeholder="Search tours..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} className="w-full" />
+        <Input type="text" placeholder="Search tours..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
       </div>
 
-      {/* Category Select */}
-      <Select value={selectedCategoryId} onValueChange={(val) => setSelectedCategoryId(val)} disabled={isPending}>
-        <SelectTrigger className="w-[200px]">
-          <SelectValue placeholder="Select category" />
-        </SelectTrigger>
-        <SelectContent>
-          {categories.map((cat) => (
-            <SelectItem key={cat.id} value={`${cat.id}`}>
-              {cat.title}
-            </SelectItem>
-          ))}
-        </SelectContent>
-      </Select>
+      <div className="flex gap-5 max-md:gap-1 max-md:text-sm">
+        {/* Category Select */}
+        <Select value={selectedCategoryId} onValueChange={(val) => setSelectedCategoryId(val)} disabled={isPending}>
+          <SelectTrigger className="w-52 max-md:w-40">
+            <SelectValue placeholder="Select category" />
+          </SelectTrigger>
+          <SelectContent>
+            {categories.map((cat) => (
+              <SelectItem key={cat.id} value={`${cat.id}`}>
+                {cat.title}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
 
-      {/* Action Buttons */}
-      <div className="flex gap-2">
-        <Button onClick={applyFilters} disabled={isPending}>
-          <Filter className="h-4 w-4 mr-1" /> Apply
-        </Button>
-        <Button variant="outline" onClick={clearFilters} disabled={isPending}>
-          Clear
-        </Button>
+        {/* Action Buttons */}
+        <div className="flex gap-2">
+          <Button onClick={applyFilters} disabled={isPending}>
+            <Filter className="h-4 w-4 mr-1" /> Apply
+          </Button>
+          <Button variant="outline" onClick={clearFilters} disabled={isPending}>
+            Clear
+          </Button>
+        </div>
       </div>
     </div>
   );

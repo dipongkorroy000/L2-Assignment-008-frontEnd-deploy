@@ -7,9 +7,9 @@ import Link from "next/link";
 
 const Tours = ({tours}: {tours: ITour[]}) => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-md:mx-5">
       {tours?.map((tour, idx) => (
-        <Card key={idx} className="shadow-md hover:shadow-lg transition-shadow">
+        <Card key={idx} className="shadow-sm hover:shadow-md transition-shadow">
           <Link href={`/explore-tours/${tour.id}`}>
             <CardHeader>
               <CardTitle>{tour.averageRating}</CardTitle>

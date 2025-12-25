@@ -18,7 +18,7 @@ const HeroSection = () => {
 
   return (
     <section>
-      <motion.h1 initial={{opacity: 0, y: -50}} animate={{opacity: 1, y: 0}} transition={{duration: 1}} className="text-5xl font-bold text-primary max-md:text-2xl max-xl:text-3xl px-5">
+      <motion.h1 initial={{opacity: 0, y: -50}} animate={{opacity: 1, y: 0}} transition={{duration: 1}} className="text-5xl font-bold text-primary max-md:text-2xl max-xl:text-3xl px-5 max-md:px-16">
         🌍 Explore Bangladesh Like a Local
       </motion.h1>
 
@@ -44,7 +44,7 @@ const HeroSection = () => {
           className="mt-6 px-6 py-2 border rounded-lg shadow-lg w-80 focus:outline-none focus:ring-2 focus:ring-primary max-md:w-52"
         />
 
-        <button type="submit" className="mt-4 ml-2 px-6 py-2 bg-primary text-white rounded-lg hover:bg-chart-4">
+        <button type="submit" className="mt-4 ml-2 px-6 py-2 bg-primary text-white rounded-lg hover:bg-chart-4 cursor-pointer">
           Search
         </button>
       </form>
