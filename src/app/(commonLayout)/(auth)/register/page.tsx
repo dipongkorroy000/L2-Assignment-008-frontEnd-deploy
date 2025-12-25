@@ -3,9 +3,9 @@ import RegisterForm from "@/src/components/shared/RegisterForm";
 
 const RegisterPage = async ({searchParams}: {searchParams: Promise<URLSearchParams>}) => {
   const params = await searchParams;
-  
+
   return (
-    <>
+    <section className="min-h-screen bg-gradient-to-r from-primary-foreground via-white to-primary-foreground">
       <div className="flex min-h-svh w-full items-center justify-center p-6 md:p-10">
         <div className="w-full max-w-xl">
           <Card>
@@ -19,7 +19,7 @@ const RegisterPage = async ({searchParams}: {searchParams: Promise<URLSearchPara
           </Card>
         </div>
       </div>
-    </>
+    </section>
   );
 };
 

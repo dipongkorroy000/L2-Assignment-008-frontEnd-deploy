@@ -22,42 +22,42 @@ const RegisterForm = ({params}: any) => {
   return (
     <form action={formAction}>
       <FieldGroup>
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 max-md:gap-2">
           {/* Name */}
-          <Field>
+          <Field className="max-md:gap-0">
             <FieldLabel htmlFor="name">Full Name</FieldLabel>
-            <Input id="name" name="name" type="text" placeholder="Enter your full name" />
+            <Input id="name" name="name" type="text" placeholder="Enter your full name" className="max-md:text-sm"/>
             {inputFieldError("name", state) && <FieldDescription className="text-red-600">{inputFieldError("name", state)}</FieldDescription>}
           </Field>
 
           {/* Address */}
-          <Field>
+          <Field className="max-md:gap-0">
             <FieldLabel htmlFor="contactNumber">Contact Number</FieldLabel>
-            <Input id="contactNumber" name="contactNumber" type="text" placeholder="Enter your contact number" />
+            <Input id="contactNumber" name="contactNumber" type="text" placeholder="Enter your contact number" className="max-md:text-sm"/>
 
             {inputFieldError("contactNumber", state) && <FieldDescription className="text-red-600">{inputFieldError("contactNumber", state)}</FieldDescription>}
           </Field>
 
           {/* Email */}
-          <Field>
+          <Field className="max-md:gap-0">
             <FieldLabel htmlFor="email">Email</FieldLabel>
-            <Input id="email" name="email" type="email" placeholder="Enter your email" />
+            <Input id="email" name="email" type="email" placeholder="Enter your email" className="max-md:text-sm"/>
 
             {inputFieldError("email", state) && <FieldDescription className="text-red-600">{inputFieldError("email", state)}</FieldDescription>}
           </Field>
 
           {/* Password */}
-          <Field>
+          <Field className="max-md:gap-0">
             <FieldLabel htmlFor="password">Password</FieldLabel>
-            <Input id="password" name="password" type="password" />
+            <Input id="password" name="password" type="password" className="max-md:text-sm"/>
 
             {inputFieldError("password", state) && <FieldDescription className="text-red-600">{inputFieldError("password", state)}</FieldDescription>}
           </Field>
 
           {/* Confirm Password */}
-          <Field className="md:col-span-2">
+          <Field className="md:col-span-2 max-md:gap-0">
             <FieldLabel htmlFor="confirmPassword">Confirm Password</FieldLabel>
-            <Input id="confirmPassword" name="confirmPassword" type="password" />
+            <Input id="confirmPassword" name="confirmPassword" type="password" className="max-md:text-sm"/>
 
             {inputFieldError("confirmPassword", state) && (
               <FieldDescription className="text-red-600">{inputFieldError("confirmPassword", state)}</FieldDescription>
@@ -65,7 +65,7 @@ const RegisterForm = ({params}: any) => {
           </Field>
         </div>
 
-        <FieldGroup className="mt-4">
+        <FieldGroup className="mt-4 max-md:mt-0">
           <Field>
             <Button type="submit" disabled={isPending}>
               {isPending ? "Creating Account..." : "Create Account"}
