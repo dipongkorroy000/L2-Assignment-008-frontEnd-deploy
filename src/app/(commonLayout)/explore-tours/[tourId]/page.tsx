@@ -6,7 +6,6 @@ import Image from "next/image";
 import RequestModal from "@/src/components/modules/tours/RequestedTourModal";
 import {getCookie} from "@/src/utils/serverToken";
 import Link from "next/link";
-import {Button} from "@/src/components/ui/button";
 import BackBtn from "@/src/components/static/BackBtn";
 
 interface Guide {
