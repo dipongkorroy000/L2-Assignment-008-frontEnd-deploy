@@ -3,7 +3,7 @@ import {Card, CardHeader, CardTitle, CardContent} from "@/src/components/ui/card
 
 const PrivacyComponent = () => {
   return (
-    <div>
+    <>
       <h1 className="text-4xl text-center mb-10 font-semibold max-lg:text-xl text-primary max-md:mb-5">Privacy & Data Protection</h1>
 
       {/* Privacy Overview Card */}
@@ -57,7 +57,7 @@ const PrivacyComponent = () => {
           </AccordionContent>
         </AccordionItem>
       </Accordion>
-    </div>
+    </>
   );
 };
 

@@ -5,15 +5,15 @@ import ContactForm from "@/src/components/shared/ContactForm";
 const ContactPage = () => {
   return (
     <section className="bg-gradient-to-r from-primary-foreground via-white to-primary-foreground min-h-screen">
-      <div className="max-w-5xl mx-auto py-20 space-y-10">
+      <div className="max-w-5xl mx-auto py-20 space-y-10 max-md:mx-10 max-md:py-10 md:px-20">
         {/* Page Header */}
         <div className="text-center space-y-2">
-          <h1 className="text-3xl font-bold">Contact Us</h1>
-          <p className="text-muted-foreground">We’d love to hear from you. Reach out anytime!</p>
+          <h1 className="text-3xl font-bold max-md:text-xl">Contact Us</h1>
+          <p className="text-muted-foreground max-md:text-sm">We’d love to hear from you. Reach out anytime!</p>
         </div>
 
         {/* Contact Info Cards */}
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-6 lg:grid-cols-3 max-md:gap-3">
           <Card className="shadow-md">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -21,7 +21,7 @@ const ContactPage = () => {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground">support@localguide.com</p>
+              <p className="text-muted-foreground max-md:text-sm">dipongkorroy000@gmail.com</p>
             </CardContent>
           </Card>
 
@@ -32,7 +32,7 @@ const ContactPage = () => {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground">+880 1234 567 890</p>
+              <p className="text-muted-foreground max-md:text-sm">+880 1799 760 840</p>
             </CardContent>
           </Card>
 
@@ -43,7 +43,7 @@ const ContactPage = () => {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground">Dinajpur, Bangladesh</p>
+              <p className="text-muted-foreground max-md:text-sm">Dinajpur, Bangladesh</p>
             </CardContent>
           </Card>
         </div>
