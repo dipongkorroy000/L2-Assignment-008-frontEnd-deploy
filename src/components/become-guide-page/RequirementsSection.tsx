@@ -1,7 +1,7 @@
 export default function RequirementsSection() {
   return (
     <section className="max-w-5xl mx-auto px-10 py-16 max-md:py-10">
-      <h2 className="text-4xl font-semibold text-chart-4 mb-6 max-md:text-xl">Requirements</h2>
+      <h2 className="text-4xl font-semibold text-chart-4 mb-6 max-xl:text-2xl max-md:text-xl">Requirements</h2>
       <ul className="space-y-3 text-gray-700 list-disc list-inside max-md:text-sm">
         <li>Must be 18+ years old</li>
         <li>Valid ID (NID/Passport)</li>

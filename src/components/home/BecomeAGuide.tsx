@@ -2,12 +2,17 @@
 
 import Link from "next/link";
 import {motion} from "framer-motion";
-import { Button } from "../ui/button";
+import {Button} from "../ui/button";
 
 const BecomeAGuide = () => {
   return (
     <>
-      <motion.h2 initial={{opacity: 0}} whileInView={{opacity: 1}} transition={{duration: 1}} className="text-4xl font-semibold text-primary max-lg:text-xl">
+      <motion.h2
+        initial={{opacity: 0}}
+        whileInView={{opacity: 1}}
+        transition={{duration: 1}}
+        className="text-4xl font-semibold text-primary max-xl:text-2xl max-lg:text-xl"
+      >
         Become a Guide
       </motion.h2>
       <p className="mt-4 text-gray-600 max-md:text-sm">Share your city’s stories and earn by guiding travelers.</p>

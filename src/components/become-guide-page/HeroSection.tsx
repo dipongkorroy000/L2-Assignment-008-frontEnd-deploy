@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function HeroSection() {
   return (
     <section className="text-center py-16 max-md:py-10">
-      <motion.h1 initial={{opacity: 0, y: -30}} animate={{opacity: 1, y: 0}} transition={{duration: 0.8}} className="text-4xl font-bold text-chart-5 max-md:text-xl">
+      <motion.h1 initial={{opacity: 0, y: -30}} animate={{opacity: 1, y: 0}} transition={{duration: 0.8}} className="text-4xl font-bold text-chart-5   max-xl:text-2xl max-md:text-xl">
         Become a Local Guide
       </motion.h1>
       <p className="mt-4 text-gray-600 max-w-2xl mx-auto max-md:text-sm max-md:px-10">Share your city’s stories, earn money, and connect with travelers from around the world.</p>

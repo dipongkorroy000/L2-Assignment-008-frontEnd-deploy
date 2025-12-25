@@ -6,8 +6,8 @@ import Link from "next/link";
 const FeatureDestination = () => {
   return (
     <>
-      <h2 className="text-4xl font-semibold text-center text-primary mb-10 max-md:text-2xl max-md:mb-5">Featured Destinations</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-md:gap-5 max-md:p-5">
+      <h2 className="text-4xl font-semibold text-center text-primary mb-10 max-xl:text-2xl max-lg:text-xl max-md:mb-5">Featured Destinations</h2>
+      <div className="flex xl:gap-8 gap-5 max-lg:flex-col">
         {["Dinajpur", "Sylhet", "Sundarbans"].map((city, i) => (
           <motion.div
             key={city}
