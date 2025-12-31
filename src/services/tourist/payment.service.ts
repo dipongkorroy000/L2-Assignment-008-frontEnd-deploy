@@ -3,13 +3,12 @@
 
 import {server_fetch} from "@/src/lib/server-fetch";
 
-export const getCategories = async () => {
+export const paymentInit = async (id: number) => {
   try {
-    const res = await server_fetch.get(`/category`);
+    const res = await server_fetch.post(`/payment/${id}`);
+    const result = await res.json();
 
-    const categories = await res.json();
-
-    return categories;
+    return result;
   } catch (error: any) {
     return {
       success: false,

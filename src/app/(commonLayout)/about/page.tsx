@@ -1,4 +1,5 @@
 import AboutComponent from "@/src/components/about/AboutComponent";
+import Chart from "@/src/components/chart/Chart";
 import MyMap from "@/src/components/map/Map";
 
 export default function AboutPage() {
@@ -6,6 +7,10 @@ export default function AboutPage() {
     <section className="bg-gradient-to-r from-primary-foreground via-white to-primary-foreground min-h-screen py-20 max-md:pt-0">
       <div className="max-w-7xl mx-auto max-md:py-10 max-md:mx-10 max-2xl:mx-20">
         <AboutComponent />
+      </div>
+
+      <div>
+        <Chart></Chart>
       </div>
 
       <div className="max-w-7xl mx-auto mt-20 max-md:px-5 max-xl:px-10 max-2xl:px-16">

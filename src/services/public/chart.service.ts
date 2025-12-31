@@ -3,13 +3,13 @@
 
 import {server_fetch} from "@/src/lib/server-fetch";
 
-export const getCategories = async () => {
+export const getChartData = async () => {
   try {
-    const res = await server_fetch.get(`/category`);
+    const res = await server_fetch.get(`/stats/chart`);
 
-    const categories = await res.json();
+    const result = await res.json();
 
-    return categories;
+    return result;
   } catch (error: any) {
     return {
       success: false,

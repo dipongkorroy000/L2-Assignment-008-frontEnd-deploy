@@ -1,4 +1,3 @@
-import React from "react";
 import {ITour} from "@/src/types/tour.interface";
 import {Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle} from "../../ui/card";
 import Image from "next/image";

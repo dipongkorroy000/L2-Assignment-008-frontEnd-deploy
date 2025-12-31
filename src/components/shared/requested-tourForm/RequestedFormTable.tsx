@@ -7,7 +7,7 @@ import {Button} from "@/src/components/ui/button";
 import {ITourForm, TOUR_FROM_STATUS} from "@/src/types/requestedTourForm.interface";
 import {updateRequestedFormStatus} from "@/src/services/public/tours.service";
 import {toast} from "sonner";
-import {paymentInit} from "@/src/services/guide/payment.service";
+import {paymentInit} from "@/src/services/tourist/payment.service";
 
 export default function RequestedFormTable({data}: {data: ITourForm[]}) {
   const [open, setOpen] = useState(false);
