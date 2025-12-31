@@ -1,5 +1,5 @@
 import UpcomingTourTable from "@/src/components/modules/admin/upcoming-tours/UpcomingToursTable";
-import {upcomingTours} from "@/src/services/tours/tours.service";
+import {upcomingTours} from "@/src/services/public/tours.service";
 
 const UpcomingTourAdminPage = async () => {
   const tours = await upcomingTours();

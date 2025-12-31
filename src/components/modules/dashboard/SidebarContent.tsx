@@ -8,7 +8,7 @@ import {usePathname} from "next/navigation";
 import {cn} from "@/src/lib/utils";
 import {IUserProfile} from "@/src/types";
 import {NavSection} from "@/src/types/navItems.interface";
-import { getLucideIcon } from "@/src/lib/getLucideIcon";
+import {getLucideIcon} from "@/src/lib/getLucideIcon";
 
 interface MobileSidebarContentProps {
   userInfo: IUserProfile;

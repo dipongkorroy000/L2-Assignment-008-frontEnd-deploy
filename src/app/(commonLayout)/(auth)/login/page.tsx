@@ -1,5 +1,4 @@
 import LoginForm from "@/src/components/shared/LoginFrom";
-import React from "react";
 
 const LoginPage = async ({searchParams}: {searchParams?: Promise<{redirect?: string}>}) => {
   const param = await searchParams;

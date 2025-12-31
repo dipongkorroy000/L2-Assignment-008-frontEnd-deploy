@@ -19,25 +19,17 @@ const FilterTours = ({categories}: {categories: {id: number; title: string}[]}) 
   const applyFilters = () => {
     const params = new URLSearchParams();
 
-    if (selectedCategoryId) {
-      params.set("categoryId", selectedCategoryId); // ✅ categoryId হিসেবে সেট করা হলো
-    }
+    if (selectedCategoryId) params.set("categoryId", selectedCategoryId); // ✅ categoryId হিসেবে সেট করা হলো
 
-    if (searchTerm) {
-      params.set("searchTerm", searchTerm);
-    }
+    if (searchTerm) params.set("searchTerm", searchTerm);
 
-    startTransition(() => {
-      router.push(`/find-tour?${params.toString()}`);
-    });
+    startTransition(() => router.push(`/find-tour?${params.toString()}`));
   };
 
   const clearFilters = () => {
     setSearchTerm("");
     setSelectedCategoryId("");
-    startTransition(() => {
-      router.push(window.location.pathname);
-    });
+    startTransition(() => router.push(window.location.pathname));
   };
 
   return (

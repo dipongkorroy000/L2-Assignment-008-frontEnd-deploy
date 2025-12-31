@@ -1,8 +1,8 @@
 import FilterTours from "@/src/components/modules/find-tour/FilterTour";
 import Tours from "@/src/components/modules/find-tour/Tours";
 import {queryStringFormatter} from "@/src/lib/formatters";
-import {getCategories} from "@/src/services/category/category.service";
-import {tours} from "@/src/services/tours/tours.service";
+import {getCategories} from "@/src/services/public/category.service";
+import {tours} from "@/src/services/public/tours.service";
 
 const FindTour = async ({searchParams}: {searchParams: Promise<{[key: string]: string | string[] | undefined}>}) => {
   const searchParamsObj = await searchParams;

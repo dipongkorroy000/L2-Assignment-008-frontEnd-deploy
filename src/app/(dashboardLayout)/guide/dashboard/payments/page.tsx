@@ -1,5 +1,5 @@
 import PaymentTable from "@/src/components/shared/payments/PaymentTable";
-import {getPayments} from "@/src/services/payment/payment.service";
+import {getPayments} from "@/src/services/public/payment.service";
 
 const PaymentsPage = async () => {
   const payments = await getPayments();

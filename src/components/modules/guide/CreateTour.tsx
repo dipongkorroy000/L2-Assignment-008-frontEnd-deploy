@@ -10,7 +10,7 @@ import InputFieldError from "../../shared/InputFieldError";
 import {Camera} from "lucide-react";
 import Image from "next/image";
 import {useRouter} from "next/navigation";
-import { getDefaultDashboardRoute } from "@/src/utils/auth-utils";
+import {getDefaultDashboardRoute} from "@/src/utils/auth-utils";
 
 interface Category {
   title: string;

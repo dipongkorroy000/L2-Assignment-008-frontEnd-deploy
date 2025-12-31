@@ -5,7 +5,7 @@ import {ICategory, ITour} from "@/src/types/tour.interface";
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/src/components/ui/table";
 import {Button} from "@/src/components/ui/button";
 import TourDeleteBtn from "../../static/TourDeleteBtn";
-import {getTour} from "@/src/services/tours/tours.service";
+import {getTour} from "@/src/services/public/tours.service";
 import EditTourModal from "./EditTourModal";
 import {updateTour, updateTourStatusByGuide} from "@/src/services/guide/tour.service";
 import {toast} from "sonner";

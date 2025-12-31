@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+"use server";
+
 import {server_fetch} from "@/src/lib/server-fetch";
 
 export const getAllUsers = async (queryString?: string) => {
@@ -6,8 +9,11 @@ export const getAllUsers = async (queryString?: string) => {
     const result = await res.json();
 
     return result;
-  } catch (error) {
-    // console.log(error);
+  } catch (error: any) {
+    return {
+      success: false,
+      message: process.env.NODE_ENV === "development" ? error.message : "Failed Data Fetching",
+    };
   }
 };
 
@@ -17,8 +23,11 @@ export const getUser = async (id: number) => {
     const result = await res.json();
 
     return result;
-  } catch (error) {
-    // console.log(error);
+  } catch (error: any) {
+    return {
+      success: false,
+      message: process.env.NODE_ENV === "development" ? error.message : "Failed Data Fetching",
+    };
   }
 };
 
@@ -28,7 +37,10 @@ export const userStats = async () => {
     const result = await res.json();
 
     return result;
-  } catch (error) {
-    // console.log(error);
+  } catch (error: any) {
+    return {
+      success: false,
+      message: process.env.NODE_ENV === "development" ? error.message : "Failed Data Fetching",
+    };
   }
 };

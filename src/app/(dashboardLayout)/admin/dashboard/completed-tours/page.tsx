@@ -1,4 +1,4 @@
-import {completedRequestedTours} from "@/src/services/tours/tours.service";
+import {completedRequestedTours} from "@/src/services/public/tours.service";
 import CompletedToursTable from "@/src/components/modules/admin/completed-tours/CompletedToursTable";
 
 const CompletedTours = async () => {

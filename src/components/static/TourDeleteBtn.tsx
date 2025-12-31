@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+
 import {Button} from "../ui/button";
 import Swal from "sweetalert2";
 import {tourDeleteById} from "@/src/services/guide/tour.service";

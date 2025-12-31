@@ -4,7 +4,7 @@
 import {useEffect, useState} from "react";
 import {Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter} from "@/src/components/ui/dialog";
 import {Button} from "@/src/components/ui/button";
-import {getUser} from "@/src/services/admin/users-management/users.service";
+import {getUser} from "@/src/services/admin/users.service";
 
 interface Props {
   open: boolean;
@@ -16,9 +16,7 @@ export default function UserDetailsModal({open, onClose, userId}: Props) {
   const [userData, setUserData] = useState<any>(null);
 
   useEffect(() => {
-    if (userId) {
-      getUser(Number(userId)).then((res) => setUserData(res.data));
-    }
+    if (userId) getUser(Number(userId)).then((res) => setUserData(res.data));
   }, [userId]);
 
   return (
@@ -43,7 +41,7 @@ export default function UserDetailsModal({open, onClose, userId}: Props) {
               <strong>Address:</strong> {userData.address || "N/A"}
             </p>
             <p>
-              <strong>Gender:</strong> {userData.gender  || "N/A"}
+              <strong>Gender:</strong> {userData.gender || "N/A"}
             </p>
             <p>
               <strong>Languages:</strong> {userData.languages?.join(", ")}

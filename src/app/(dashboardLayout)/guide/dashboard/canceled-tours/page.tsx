@@ -1,5 +1,5 @@
 import CanceledPageComponent from "@/src/components/shared/tours/CanceledToursComponent";
-import {canceledRequestedTours} from "@/src/services/tours/tours.service";
+import {canceledRequestedTours} from "@/src/services/public/tours.service";
 import React from "react";
 
 const CanceledPage = async () => {

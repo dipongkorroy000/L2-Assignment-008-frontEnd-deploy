@@ -6,10 +6,6 @@ import {IRequestTour} from "@/src/types/requested-tour.interface";
 import {revalidateTag} from "next/cache";
 
 export const tours = async (queryString?: string): Promise<any> => {
-  //   const res = await server_fetch.post("/auth/login", {body: JSON.stringify(validatedPayload), headers: {"Content-Type": "application/json"}});
-  // const setCookieHeaders = res.headers.getSetCookie();
-  // const result = await res.json();
-
   try {
     const toursResponse = await server_fetch.get(`/tours${queryString ? `?${queryString}` : ""}`, {
       method: "GET",

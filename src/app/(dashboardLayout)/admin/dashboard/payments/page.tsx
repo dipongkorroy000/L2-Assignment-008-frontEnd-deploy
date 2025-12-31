@@ -1,4 +1,4 @@
-import {getPayments} from "@/src/services/payment/payment.service";
+import {getPayments} from "@/src/services/public/payment.service";
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/src/components/ui/table";
 
 const AdminPaymentsPage = async () => {

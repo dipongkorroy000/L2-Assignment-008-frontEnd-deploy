@@ -37,7 +37,7 @@ const ProfileDropdown = ({userInfo}: UserDropdownProps) => {
         </DropdownMenuItem>
 
         <DropdownMenuSeparator></DropdownMenuSeparator>
-        
+
         <DropdownMenuItem asChild>
           <LogoutBtn />
         </DropdownMenuItem>

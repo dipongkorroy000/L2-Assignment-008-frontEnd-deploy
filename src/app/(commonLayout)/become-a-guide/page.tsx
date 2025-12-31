@@ -1,5 +1,3 @@
-// "use client";
-
 import BenefitsSection from "@/src/components/become-guide-page/BenefitsSection";
 import HeroSection from "@/src/components/become-guide-page/HeroSection";
 import HowItWorksSection from "@/src/components/become-guide-page/HowItWorksSection";

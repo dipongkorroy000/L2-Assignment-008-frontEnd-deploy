@@ -5,7 +5,7 @@ import {Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter, DialogDe
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/src/components/ui/table";
 import {Button} from "@/src/components/ui/button";
 import {ITourForm, TOUR_FROM_STATUS} from "@/src/types/requestedTourForm.interface";
-import {updateRequestedFormStatus} from "@/src/services/tours/tours.service";
+import {updateRequestedFormStatus} from "@/src/services/public/tours.service";
 import {toast} from "sonner";
 import {paymentInit} from "@/src/services/guide/payment.service";
 

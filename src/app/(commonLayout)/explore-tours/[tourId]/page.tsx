@@ -1,4 +1,4 @@
-import {getTour} from "@/src/services/tours/tours.service";
+import {getTour} from "@/src/services/public/tours.service";
 import {Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle} from "@/src/components/ui/card";
 import {Avatar, AvatarFallback, AvatarImage} from "@/src/components/ui/avatar";
 import {Badge} from "@/src/components/ui/badge";

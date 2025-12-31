@@ -1,5 +1,5 @@
 import RequestedFormTable from "@/src/components/shared/requested-tourForm/RequestedFormTable";
-import {getRequestedForm} from "@/src/services/tours/tours.service";
+import {getRequestedForm} from "@/src/services/public/tours.service";
 import React from "react";
 
 const RequestedToursPage = async () => {

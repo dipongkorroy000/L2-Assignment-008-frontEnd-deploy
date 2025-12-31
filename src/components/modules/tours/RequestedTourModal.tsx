@@ -5,7 +5,7 @@ import {Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter} from "@/
 import {Button} from "@/src/components/ui/button";
 import {Textarea} from "@/src/components/ui/textarea";
 
-import {tourRequested} from "@/src/services/tours/tours.service";
+import {tourRequested} from "@/src/services/public/tours.service";
 import {toast} from "sonner";
 import {Calendar} from "../../ui/calendar";
 

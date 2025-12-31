@@ -1,4 +1,3 @@
-import React from "react";
 import SidebarContent from "./SidebarContent";
 import {getNavItemsByRole} from "@/src/utils/navItems.config";
 import {NavSection} from "@/src/types/navItems.interface";

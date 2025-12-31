@@ -2,7 +2,7 @@ import ToursTable from "@/src/components/modules/guide/ToursTable";
 import Pagination from "@/src/components/shared/pagination/Pagination";
 import {TableSkeleton} from "@/src/components/shared/skeletons/TableSkeleton";
 import {queryStringFormatter} from "@/src/lib/formatters";
-import {getCategories} from "@/src/services/category/category.service";
+import {getCategories} from "@/src/services/public/category.service";
 import {getTours} from "@/src/services/guide/tour.service";
 import {Suspense} from "react";
 

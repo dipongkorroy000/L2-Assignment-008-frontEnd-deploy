@@ -1,6 +1,6 @@
 import DashboardStats from "@/src/components/modules/admin/stats/DashboardStats";
 import MessageSheetComponent from "@/src/components/shared/MessageSheet";
-import {userStats} from "@/src/services/admin/users-management/users.service";
+import {userStats} from "@/src/services/admin/users.service";
 import {getMessages} from "@/src/services/tourist/tourist.service";
 
 const AdminDashboardPage = async () => {

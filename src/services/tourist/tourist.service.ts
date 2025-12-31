@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+"use server";
+
 import {server_fetch} from "@/src/lib/server-fetch";
 
 export const createReview = async (requestedFormId: number, payload: {rating: number; comment: string}) => {
@@ -9,8 +12,11 @@ export const createReview = async (requestedFormId: number, payload: {rating: nu
     const result = await res.json();
 
     return result;
-  } catch (error) {
-    // console.log(error);
+  } catch (error: any) {
+    return {
+      success: false,
+      message: process.env.NODE_ENV === "development" ? error.message : "Failed Data Fetching",
+    };
   }
 };
 
@@ -23,8 +29,11 @@ export const postContactMessage = async (payload: {message: string; email: strin
     const result = await res.json();
 
     return result;
-  } catch (error) {
-    // console.log(error);
+  } catch (error: any) {
+    return {
+      success: false,
+      message: process.env.NODE_ENV === "development" ? error.message : "Failed Data Fetching",
+    };
   }
 };
 
@@ -34,7 +43,10 @@ export const getMessages = async () => {
     const result = await res.json();
 
     return result;
-  } catch (error) {
-    // console.log(error);
+  } catch (error: any) {
+    return {
+      success: false,
+      message: process.env.NODE_ENV === "development" ? error.message : "Failed Data Fetching",
+    };
   }
 };

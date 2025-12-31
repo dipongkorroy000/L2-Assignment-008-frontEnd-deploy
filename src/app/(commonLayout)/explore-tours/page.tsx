@@ -1,5 +1,5 @@
 import Tours from "@/src/components/modules/tours/Tours";
-import {getCateWithTours} from "@/src/services/tours/tours.service";
+import {getCateWithTours} from "@/src/services/public/tours.service";
 
 const ExploreToursPage = async () => {
   const tour = await getCateWithTours();

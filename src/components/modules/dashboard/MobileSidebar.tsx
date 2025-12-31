@@ -16,7 +16,7 @@ interface DashboardMobileSidebarContentProps {
   navItems: NavSection[];
 }
 
-const DashboardMobileSidebar = ({userInfo, navItems,}: DashboardMobileSidebarContentProps) => {
+const DashboardMobileSidebar = ({userInfo, navItems}: DashboardMobileSidebarContentProps) => {
   const pathname = usePathname();
 
   return (

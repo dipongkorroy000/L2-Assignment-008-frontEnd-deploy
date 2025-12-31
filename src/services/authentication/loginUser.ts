@@ -1,10 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use server";
-import {parse} from "cookie";
 
+import {parse} from "cookie";
 import {redirect} from "next/navigation";
 import jwt, {JwtPayload} from "jsonwebtoken";
-
 import {loginValidationZodSchema} from "@/src/zod/auth.validation";
 import {zodValidator} from "@/src/lib/zodValidator";
 import {setCookie} from "@/src/utils/serverToken";

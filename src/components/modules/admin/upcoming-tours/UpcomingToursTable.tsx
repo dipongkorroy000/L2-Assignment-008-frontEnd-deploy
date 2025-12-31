@@ -25,7 +25,6 @@ interface Props {
 }
 
 export default function UpcomingTourTable({tours}: Props) {
-  console.log(tours);
   return (
     <div className="mt-8">
       <Table>

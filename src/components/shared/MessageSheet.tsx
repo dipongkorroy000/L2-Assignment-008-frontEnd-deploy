@@ -1,6 +1,6 @@
 "use client";
 
-import { Card, CardHeader, CardTitle, CardContent } from "@/src/components/ui/card";
+import {Card, CardHeader, CardTitle, CardContent} from "@/src/components/ui/card";
 
 interface IMessage {
   name: string;
@@ -8,7 +8,7 @@ interface IMessage {
   message: string;
 }
 
-const MessageSheetComponent = ({ name, email, message }: IMessage) => {
+const MessageSheetComponent = ({name, email, message}: IMessage) => {
   return (
     <Card className="shadow-md rounded-lg">
       <CardHeader>

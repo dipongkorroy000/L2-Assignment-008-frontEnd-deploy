@@ -1,6 +1,6 @@
 import CategoryManagement from "@/src/components/modules/admin/category/CategoryManagement";
 import CategoryTable from "@/src/components/modules/admin/category/CategoryTable";
-import {getCategories} from "@/src/services/category/category.service";
+import {getCategories} from "@/src/services/public/category.service";
 import React from "react";
 
 const CategoryManagementPage = async () => {

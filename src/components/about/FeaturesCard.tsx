@@ -1,5 +1,5 @@
-// components/about/FeaturesCard.tsx
 "use client";
+
 import {motion} from "framer-motion";
 
 export default function FeaturesCard() {

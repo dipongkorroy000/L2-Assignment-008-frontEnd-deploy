@@ -3,11 +3,13 @@
 
 import {server_fetch} from "@/src/lib/server-fetch";
 
-export const getReviews = async () => {
+export const getCategories = async () => {
   try {
-    const res = await server_fetch.get("/review/guide");
-    const result = await res.json();
-    return result;
+    const res = await server_fetch.get(`/category`);
+
+    const categories = await res.json();
+
+    return categories;
   } catch (error: any) {
     return {
       success: false,
@@ -15,3 +17,5 @@ export const getReviews = async () => {
     };
   }
 };
+
+

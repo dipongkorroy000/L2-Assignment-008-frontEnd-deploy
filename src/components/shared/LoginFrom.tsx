@@ -25,7 +25,7 @@ const LoginForm = ({redirect}: {redirect: string | undefined}) => {
           {/* Email */}
           <Field>
             <FieldLabel htmlFor="email">Email</FieldLabel>
-            <Input id="email" name="email" type="email" placeholder="m@example.com" className="max-md:text-sm"/>
+            <Input id="email" name="email" type="email" placeholder="m@example.com" className="max-md:text-sm" />
 
             {inputFieldError("email", state) && <FieldDescription className="text-red-600">{inputFieldError("email", state)}</FieldDescription>}
           </Field>
@@ -33,7 +33,7 @@ const LoginForm = ({redirect}: {redirect: string | undefined}) => {
           {/* Password */}
           <Field>
             <FieldLabel htmlFor="password">Password</FieldLabel>
-            <Input id="password" name="password" type="password" placeholder="Enter your password" className="max-md:text-sm"/>
+            <Input id="password" name="password" type="password" placeholder="Enter your password" className="max-md:text-sm" />
             {inputFieldError("password", state) && <FieldDescription className="text-red-600">{inputFieldError("password", state)}</FieldDescription>}
           </Field>
         </div>

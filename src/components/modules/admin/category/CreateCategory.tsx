@@ -4,7 +4,7 @@ import {Dialog, DialogContent, DialogHeader, DialogTitle} from "@/src/components
 import {Button} from "@/src/components/ui/button";
 import {Field, FieldLabel} from "@/src/components/ui/field";
 import {Input} from "@/src/components/ui/input";
-import {createCategory} from "@/src/services/category/category.service";
+import {createCategory} from "@/src/services/admin/category.service";
 import {toast} from "sonner";
 import {useForm} from "react-hook-form";
 import {Form} from "@/src/components/ui/form";

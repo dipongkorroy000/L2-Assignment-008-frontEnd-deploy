@@ -21,9 +21,10 @@ const getProfile = async (): Promise<IUserProfile | any> => {
 
     return userProfile;
   } catch (error: any) {
-    // console.log(error);
-
-    return null;
+    return {
+      success: false,
+      message: process.env.NODE_ENV === "development" ? error.message : "Failed Data Fetching",
+    };
   }
 };
 

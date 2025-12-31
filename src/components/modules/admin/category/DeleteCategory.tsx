@@ -1,5 +1,5 @@
-import { Button } from "@/src/components/ui/button";
-import { Trash2 } from "lucide-react";
+import {Button} from "@/src/components/ui/button";
+import {Trash2} from "lucide-react";
 import Swal from "sweetalert2";
 
 const DeleteCategory = ({id, tourCount}: {id: number; tourCount: number}) => {

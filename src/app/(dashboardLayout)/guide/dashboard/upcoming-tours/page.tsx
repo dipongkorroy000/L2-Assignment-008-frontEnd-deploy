@@ -1,5 +1,5 @@
 import UpcomingToursTable from "@/src/components/shared/requested-tourForm/UpcomingToursTable";
-import {upcomingTours} from "@/src/services/tours/tours.service";
+import {upcomingTours} from "@/src/services/public/tours.service";
 import React from "react";
 
 const GuideUpcomingToursPage = async () => {

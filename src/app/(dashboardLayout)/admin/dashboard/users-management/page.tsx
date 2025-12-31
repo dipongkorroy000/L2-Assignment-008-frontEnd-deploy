@@ -2,7 +2,7 @@ import FilterUsers from "@/src/components/modules/admin/users-management/FilterU
 import RoleWiseTable from "@/src/components/modules/admin/users-management/RoleWiseTable";
 import Pagination from "@/src/components/shared/pagination/Pagination";
 import {queryStringFormatter} from "@/src/lib/formatters";
-import {getAllUsers} from "@/src/services/admin/users-management/users.service";
+import {getAllUsers} from "@/src/services/admin/users.service";
 import { getDefaultDashboardRoute } from "@/src/utils/auth-utils";
 
 const UsersManagement = async ({searchParams}: {searchParams: Promise<{[key: string]: string | string[] | undefined}>}) => {

@@ -1,5 +1,5 @@
 import ReviewCreateComponent from "@/src/components/shared/ReviewCreateComponent";
-import {completedToursReviewProvide} from "@/src/services/tours/tours.service";
+import {completedToursReviewProvide} from "@/src/services/public/tours.service";
 import React from "react";
 
 const TouristDashboardPage = async () => {

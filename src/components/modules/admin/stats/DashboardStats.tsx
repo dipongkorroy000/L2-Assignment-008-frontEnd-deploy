@@ -1,4 +1,5 @@
 "use client";
+
 import {Card, CardHeader, CardTitle, CardContent} from "@/src/components/ui/card";
 
 interface DashboardStatsProps {

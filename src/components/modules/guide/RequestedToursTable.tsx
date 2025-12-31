@@ -5,9 +5,9 @@ import {Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter, DialogDe
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/src/components/ui/table";
 import {Button} from "@/src/components/ui/button";
 import {ITourForm, PAYMENT_STATUS, TOUR_FROM_STATUS} from "@/src/types/requestedTourForm.interface";
-import {updateRequestedFormStatus} from "@/src/services/tours/tours.service";
+import {updateRequestedFormStatus} from "@/src/services/public/tours.service";
 import {toast} from "sonner";
-import {updateRequestedTourFormStatus} from "@/src/services/tour-from/tour-form.service";
+import {updateRequestedTourFormStatus} from "@/src/services/guide/tour.service";
 import Swal from "sweetalert2";
 
 export default function RequestedToursTable({data}: {data: ITourForm[]}) {

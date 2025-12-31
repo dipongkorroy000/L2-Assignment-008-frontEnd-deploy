@@ -1,4 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+"use server";
+
 import {server_fetch} from "@/src/lib/server-fetch";
 
 export const getPayments = async () => {

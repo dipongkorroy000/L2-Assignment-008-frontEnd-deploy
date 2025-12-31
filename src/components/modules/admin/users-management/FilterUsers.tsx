@@ -7,7 +7,7 @@ import {Select, SelectTrigger, SelectValue, SelectContent, SelectItem} from "@/s
 import {Button} from "@/src/components/ui/button";
 import {Search, Filter} from "lucide-react";
 
-const FilterUsers = ({userRoles, defaultPath}: {userRoles: {role: string}[] , defaultPath: string}) => {
+const FilterUsers = ({userRoles, defaultPath}: {userRoles: {role: string}[]; defaultPath: string}) => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [isPending, startTransition] = useTransition();
@@ -18,25 +18,17 @@ const FilterUsers = ({userRoles, defaultPath}: {userRoles: {role: string}[] , de
   const applyFilters = () => {
     const params = new URLSearchParams();
 
-    if (selectedRole) {
-      params.set("role", selectedRole);
-    }
+    if (selectedRole) params.set("role", selectedRole);
 
-    if (email) {
-      params.set("email", email);
-    }
+    if (email) params.set("email", email);
 
-    startTransition(() => {
-      router.push(`${defaultPath}/users-management?${params.toString()}`);
-    });
+    startTransition(() => router.push(`${defaultPath}/users-management?${params.toString()}`));
   };
 
   const clearFilters = () => {
     setSearchTerm("");
     setSelectedRole("");
-    startTransition(() => {
-      router.push(window.location.pathname);
-    });
+    startTransition(() => router.push(window.location.pathname));
   };
 
   return (
