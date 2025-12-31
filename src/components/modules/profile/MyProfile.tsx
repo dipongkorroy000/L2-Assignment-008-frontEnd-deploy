@@ -136,7 +136,9 @@ const MyProfile = ({userInfo}: MyProfileProps) => {
 
                   <div className="text-center space-y-1">
                     <p className="font-semibold text-lg mt-3">{userInfo?.name}</p>
-                    <span className="inline-block text-sm bg-muted px-3 py-1 rounded-full capitalize text-primary">{userInfo?.role.replace("_", " ")}</span>
+                    <span className="inline-block text-sm bg-muted px-3 py-1 rounded-full capitalize text-primary">
+                      {userInfo?.role && userInfo.role.replace("_", " ")}
+                    </span>
                   </div>
                 </div>
 
