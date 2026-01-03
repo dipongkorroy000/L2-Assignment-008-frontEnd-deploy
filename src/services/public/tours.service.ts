@@ -163,3 +163,20 @@ export const completedToursReviewProvide = async () => {
     };
   }
 };
+
+export const getAIToursSuggestions = async (payload: {preferences: string}) => {
+  try {
+    const req = await server_fetch.post("/tours/ai-suggestions", {
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(payload),
+    });
+    const result = await req.json();
+
+    return result;
+  } catch (error: any) {
+    return {
+      success: false,
+      message: process.env.NODE_ENV === "development" ? error.message : "Failed Data Fetching",
+    };
+  }
+};
