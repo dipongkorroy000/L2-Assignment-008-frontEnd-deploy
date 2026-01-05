@@ -33,7 +33,7 @@ const FilterTours = ({categories}: {categories: {id: number; title: string}[]}) 
   };
 
   return (
-    <div className="flex flex-col md:flex-row gap-4 items-center max-md:mx-5 max-md:items-start">
+    <div className="flex flex-col sm:flex-row gap-4 items-center max-md:items-start">
       {/* Search Box */}
       <div className="flex items-center gap-2 w-72">
         <Search className="h-4 w-4 text-muted-foreground" />

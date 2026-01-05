@@ -18,7 +18,7 @@ export const MainNavbar = ({profile}: {profile: any}) => {
   const profilePhoto = profile?.guide?.profilePhoto || profile?.tourist?.profilePhoto || profile?.admin?.profilePhoto || null;
 
   return (
-    <div className="container mx-auto flex h-16 items-center justify-between px-4">
+    <div className="max-w-7xl mx-auto max-xl:mx-10 max-md:mx-0 px-5 flex h-16 items-center justify-between">
       <Link href="/" className="text-2xl font-bold">
         <h1 className="text-chart-5">Local Guide</h1>
       </Link>

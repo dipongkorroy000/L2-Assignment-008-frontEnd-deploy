@@ -10,7 +10,7 @@ const benefits = [
 
 export default function BenefitsSection() {
   return (
-    <section className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 py-16 max-md:py-8 max-md:mx-10 max-md:gap-5 md:px-20">
+    <section className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 py-16 max-md:py-8 max-md:gap-5 max-xl:mx-10 max-md:mx-0 p-5">
       {benefits.map((item, i) => (
         <motion.div
           key={item.title}

@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="bg-sidebar-foreground text-gray-300 py-10">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8 max-md:gap-5">
+      <div className="max-w-7xl mx-auto max-xl:mx-10 max-md:mx-0 px-5 grid grid-cols-1 md:grid-cols-4 gap-8 max-md:gap-5">
         {/* Brand / About */}
         <div>
           <h2 className="text-xl font-bold text-white mb-4 max-md:mb-2">LocalGuide</h2>

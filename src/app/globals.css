@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap"); /* web page header name font url link*/
+
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -119,4 +121,49 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Web page header name css */
+#header-name {
+  font-family: "Russo One", sans-serif;
+  width: 100%;
+  height: 100%;
+}
+
+#header-name text {
+  animation: stroke 8s infinite alternate;
+  stroke-width: 2;
+  stroke: #0ea023;
+  /* font-size: 60px; */
+  /* font-weight: normal; */
+}
+
+@keyframes stroke {
+  0% {
+    fill: rgba(72, 138, 204, 0);
+    stroke: rgba(14, 160, 35, 1);
+    stroke-dashoffset: 25%;
+    stroke-dasharray: 0 50%;
+    stroke-width: 2;
+  }
+  70% {
+    fill: rgba(72, 138, 204, 0);
+    stroke: rgba(14, 160, 35, 1);
+  }
+  80% {
+    fill: rgba(72, 138, 204, 0);
+    stroke: rgba(14, 160, 35, 1);
+    stroke-width: 3;
+  }
+  100% {
+    fill: rgba(72, 138, 204, 1);
+    stroke: rgba(14, 160, 35, 0);
+    stroke-dashoffset: -25%;
+    stroke-dasharray: 50% 0;
+    stroke-width: 0;
+  }
+}
+
+.wrapper {
+  /* background-color: #FFFFFF; */
 }

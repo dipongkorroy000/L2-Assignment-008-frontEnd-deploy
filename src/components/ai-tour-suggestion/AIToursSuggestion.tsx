@@ -41,7 +41,7 @@ export default function AIToursSuggestion() {
   };
 
   return (
-    <section className="max-w-7xl pt-5 mx-auto space-y-8 max-md:px-4">
+    <section className="max-w-7xl pt-5 mx-auto space-y-8 max-md:px-5 px-5 max-xl:mx-10 max-md:mx-0">
       {/* Header */}
       <div className="text-center space-y-2">
         <h2 className="text-3xl max-md:text-xl font-bold text-chart-5 flex items-center justify-center gap-2 max-md:mt-3">

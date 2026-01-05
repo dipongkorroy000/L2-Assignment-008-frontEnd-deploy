@@ -8,7 +8,7 @@ const FeatureDestination = () => {
     <>
       <h2 className="text-4xl font-semibold text-center text-primary mb-10 max-xl:text-2xl max-lg:text-xl max-md:mb-5">Featured Destinations</h2>
       <div className="flex xl:gap-8 gap-5 max-lg:flex-col">
-        {["Dinajpur", "Sylhet", "Sundarbans"].map((city, i) => (
+        {["Dinajpur", "Sylhet", "Sundarban"].map((city, i) => (
           <motion.div
             key={city}
             initial={{opacity: 0, y: 50}}

@@ -51,8 +51,8 @@ const TourDetails = async ({params}: {params: Promise<{tourId: string}>}) => {
   const tour: ITour = await getTour(Number(tourId));
 
   return (
-    <section className="py-20 bg-gradient-to-r from-primary-foreground via-white to-primary-foreground max-md:py-5 max-md:px-5">
-      <div className="max-w-4xl mx-auto bg-clip-border">
+    <section className="py-20 bg-gradient-to-r from-primary-foreground via-white to-primary-foreground max-md:py-5">
+      <div className="max-w-4xl mx-auto bg-clip-border max-lg:mx-10 max-md:mx-0 px-5">
         <Card className="shadow-sm bg-clip-border">
           {/* Tour Header */}
           <CardHeader>
@@ -158,7 +158,7 @@ const TourDetails = async ({params}: {params: Promise<{tourId: string}>}) => {
         </Card>
       </div>
 
-      <div className="mt-5 max-w-4xl mx-auto bg-clip-border">
+      <div className="max-w-4xl mx-auto bg-clip-border mt-5 max-lg:mx-10 max-md:mx-0 px-5">
         <BackBtn></BackBtn>
       </div>
     </section>
