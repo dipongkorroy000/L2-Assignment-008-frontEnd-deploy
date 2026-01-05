@@ -59,8 +59,8 @@ export default function Footer() {
         {/* Contact */}
         <div>
           <h3 className="text-lg font-semibold text-white mb-4 max-md:mb-2">Contact</h3>
-          <p>Email: support@localguide.com</p>
-          <p>Phone: +880-1234-567890</p>
+          <p>Email: dipongkorroy000@gmail.com</p>
+          <p>Phone: +880-1799-760840</p>
           <div className="flex space-x-4 mt-4">
             <Link href="https://www.facebook.com/profile.php?id=61570830432784" target="_blank" className="hover:text-white">
               🌐 Facebook

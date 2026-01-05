@@ -1,4 +1,5 @@
 "use client";
+
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/src/components/ui/table";
 import DeleteCategory from "./DeleteCategory";
 

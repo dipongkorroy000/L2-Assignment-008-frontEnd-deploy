@@ -5,7 +5,7 @@ import ContactForm from "@/src/components/shared/ContactForm";
 const ContactPage = () => {
   return (
     <section className="bg-gradient-to-r from-primary-foreground via-white to-primary-foreground min-h-screen">
-      <div className="max-w-5xl mx-auto py-20 space-y-10 max-md:mx-10 max-md:py-10 md:px-20">
+      <div className="max-w-7xl mx-auto py-16 space-y-10 max-md:py-10 max-xl:mx-10 max-md:mx-0 px-5">
         {/* Page Header */}
         <div className="text-center space-y-2">
           <h1 className="text-3xl font-bold max-md:text-xl">Contact Us</h1>

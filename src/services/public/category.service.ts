@@ -5,7 +5,9 @@ import {server_fetch} from "@/src/lib/server-fetch";
 
 export const getCategories = async () => {
   try {
-    const res = await server_fetch.get(`/category`);
+    const res = await server_fetch.get(`/category`, {
+        next: {tags: ["get-categories"]},
+    });
 
     const categories = await res.json();
 

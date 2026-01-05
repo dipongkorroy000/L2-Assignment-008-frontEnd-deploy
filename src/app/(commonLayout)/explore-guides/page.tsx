@@ -19,7 +19,7 @@ const ExploreGuidesPage = async ({searchParams}: {searchParams: Promise<{[key: s
 
   return (
     <section className="bg-gradient-to-r from-primary-foreground via-white to-primary-foreground">
-      <div className="max-w-7xl mx-auto min-h-dvh py-20 space-y-20 max-md:space-y-10 max-md:py-5 max-2xl:px-10 max-md:px-4">
+      <div className="max-w-7xl mx-auto min-h-dvh py-20 space-y-20 max-md:space-y-10 max-md:py-5 max-xl:mx-10 max-md:mx-0 px-5">
         {guidesLanguages.data && <FilterGuides languages={guidesLanguages.data} categories={categories.data}></FilterGuides>}
 
         <GuidesComponent guides={guides.data.data}></GuidesComponent>

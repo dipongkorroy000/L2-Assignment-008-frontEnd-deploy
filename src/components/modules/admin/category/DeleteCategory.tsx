@@ -1,4 +1,5 @@
 import {Button} from "@/src/components/ui/button";
+import {deleteCategory} from "@/src/services/admin/category.service";
 import {Trash2} from "lucide-react";
 import Swal from "sweetalert2";
 
@@ -12,8 +13,9 @@ const DeleteCategory = ({id, tourCount}: {id: number; tourCount: number}) => {
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, delete it!",
-    }).then((result) => {
+    }).then(async (result) => {
       if (result.isConfirmed) {
+        await deleteCategory(id);
         Swal.fire({
           title: "Deleted!",
           text: "Your file has been deleted.",
