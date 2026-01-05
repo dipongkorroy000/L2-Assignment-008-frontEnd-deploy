@@ -36,12 +36,12 @@ const GuidesComponent = ({guides}: {guides: GuideDataProps[]}) => {
         <Table className="w-full">
           <TableHeader className="sticky top-0 bg-white z-10 shadow-sm rounded-md">
             <TableRow>
-              <TableHead>Photo</TableHead>
+              <TableHead></TableHead>
               <TableHead>Name</TableHead>
               <TableHead>Email</TableHead>
               <TableHead>Rating</TableHead>
               <TableHead>Languages</TableHead>
-              <TableHead>Tours</TableHead>
+              <TableHead></TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
