@@ -24,7 +24,7 @@ export default function AIToursSuggestion() {
 
     try {
       const response = await getAIToursSuggestions({preferences});
-      console.log("response", response);
+
       if (response.success) {
         // Expecting JSON array of tours
         setSuggestions(response.data || []);

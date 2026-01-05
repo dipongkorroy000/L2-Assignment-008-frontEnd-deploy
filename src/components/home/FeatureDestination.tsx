@@ -18,7 +18,7 @@ const FeatureDestination = () => {
           >
             <h3 className="text-xl max-md:text-lg font-bold text-chart-5">{city}</h3>
             <p className="text-gray-600 mt-2 max-md:text-sm">Discover the culture, history, and hidden gems of {city}.</p>
-            <Link href={`/find-tour?searchTerm=${encodeURIComponent(city)}`}>
+            <Link href={`/explore-guides?searchTerm=${encodeURIComponent(city)}`}>
               <button className="mt-4 px-4 py-2 bg-white rounded-lg hover:bg-primary hover:text-white cursor-pointer">Find Guides</button>
             </Link>
           </motion.div>
