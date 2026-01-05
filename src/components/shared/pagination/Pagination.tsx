@@ -36,7 +36,7 @@ const Pagination = ({currentPage, totalPages}: TablePaginationProps) => {
 
   return (
     <div className="flex items-center justify-center gap-2 mt-10">
-      <Button variant="outline" size="lg" onClick={() => navigateToPage(currentPage - 1)} disabled={currentPage <= 1 || isPending}>
+      <Button variant="outline" size="sm" onClick={() => navigateToPage(currentPage - 1)} disabled={currentPage <= 1 || isPending}>
         <ChevronLeft/>
       </Button>
 
@@ -64,11 +64,11 @@ const Pagination = ({currentPage, totalPages}: TablePaginationProps) => {
         })}
       </div>
 
-      <Button variant="outline" size="lg" onClick={() => navigateToPage(currentPage + 1)} disabled={currentPage === totalPages || isPending}>
+      <Button variant="outline" size="sm" onClick={() => navigateToPage(currentPage + 1)} disabled={currentPage === totalPages || isPending}>
         <ChevronRight/>
       </Button>
 
-      <span className="text-sm text-muted-foreground ml-2">
+      <span className="text-sm max-md:text-clip text-muted-foreground ml-2">
         {/* Page 9 of 20 */}
         Page {currentPage} of {totalPages}
       </span>
