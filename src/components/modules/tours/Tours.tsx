@@ -33,11 +33,11 @@ const Tours = ({tours}: {tours: CategoryGroup[]}) => {
               {category.tour.map((tour, idx) => (
                 <Card key={idx} className="shadow-sm hover:shadow-lg transition-shadow bg-white">
                   <Link href={`/explore-tours/${tour.id}`}>
-                    <CardHeader>
-                      <CardTitle>{tour.title}</CardTitle>
-                      <CardDescription>
-                        ⭐ {tour.averageRating} • {tour.city}
-                      </CardDescription>
+                    <CardHeader className="flex justify-between">
+                        <CardTitle className="md:text-xl">{tour.title}</CardTitle>
+                        <CardDescription>
+                          ⭐ {tour.averageRating}
+                        </CardDescription>
                     </CardHeader>
                     <CardContent className="py-3 max-md:py-1 max-md:text-sm">
                       <p>
