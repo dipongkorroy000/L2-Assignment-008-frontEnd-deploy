@@ -26,25 +26,25 @@ export const guideNavItems: NavSection[] = [
       {
         title: "Upcoming Tours",
         href: "/guide/dashboard/upcoming-tours",
-        icon: "BadgePlus",
+        icon: "Clock",
         roles: ["GUIDE"],
       },
       {
         title: "Requested Tours",
         href: "/guide/dashboard/requested-tours",
-        icon: "BadgePlus",
+        icon: "ArrowUpToLine",
         roles: ["GUIDE"],
       },
       {
         title: "Canceled Tours",
         href: "/guide/dashboard/canceled-tours",
-        icon: "BadgePlus",
+        icon: "CircleX",
         roles: ["GUIDE"],
       },
       {
         title: "Completed Tours",
         href: "/guide/dashboard/completed-tours",
-        icon: "BadgePlus",
+        icon: "CheckCheck",
         roles: ["GUIDE"],
       },
     ],
@@ -72,7 +72,7 @@ export const guideNavItems: NavSection[] = [
       {
         title: "Payments",
         href: "/guide/dashboard/payments",
-        icon: "BadgeDollarSign",
+        icon: "WalletMinimal",
         roles: ["GUIDE"],
       },
     ],
@@ -86,19 +86,19 @@ export const touristNavItems: NavSection[] = [
       {
         title: "Upcoming Tours",
         href: "/dashboard/upcoming-tours",
-        icon: "FileText",
+        icon: "Clock",
         roles: ["TOURIST"],
       },
       {
         title: "Completed Tours",
         href: "/dashboard/completed-tours",
-        icon: "FileText",
+        icon: "CheckCheck",
         roles: ["TOURIST"],
       },
       {
         title: "Canceled Tours",
         href: "/dashboard/canceled-tours",
-        icon: "FileText",
+        icon: "CircleX",
         roles: ["TOURIST"],
       },
     ],
@@ -109,13 +109,13 @@ export const touristNavItems: NavSection[] = [
       {
         title: "My Requested Tours",
         href: "/dashboard/requested-tours",
-        icon: "Calendar",
+        icon: "ArrowUpToLine",
         roles: ["TOURIST"],
       },
       {
         title: "Payments",
         href: "/dashboard/payments",
-        icon: "ClipboardList",
+        icon: "WalletMinimal",
         roles: ["TOURIST"],
       },
     ],
@@ -129,7 +129,7 @@ export const adminNavItems: NavSection[] = [
       {
         title: "All Users",
         href: "/admin/dashboard/users-management",
-        icon: "Shield",
+        icon: "User",
         roles: ["ADMIN"],
       },
     ],
@@ -140,7 +140,7 @@ export const adminNavItems: NavSection[] = [
       {
         title: "Completed  Tours",
         href: "/admin/dashboard/completed-tours",
-        icon: "Clock",
+        icon: "CheckCheck",
         roles: ["ADMIN"],
       },
       {
@@ -157,7 +157,7 @@ export const adminNavItems: NavSection[] = [
       {
         title: "Tours Category",
         href: "/admin/dashboard/category-management",
-        icon: "Calendar",
+        icon: "ChartColumnStacked",
         roles: ["ADMIN"],
       },
     ],
@@ -168,7 +168,7 @@ export const adminNavItems: NavSection[] = [
       {
         title: "Payments",
         href: "/admin/dashboard/payments",
-        icon: "Calendar",
+        icon: "WalletMinimal",
         roles: ["ADMIN"],
       },
     ],

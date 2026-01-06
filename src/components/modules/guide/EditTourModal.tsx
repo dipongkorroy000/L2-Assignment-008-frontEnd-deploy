@@ -18,6 +18,72 @@ interface Props {
   categories: {title: string; id: number}[];
 }
 
+const districts = [
+  "Bagerhat",
+  "Bandarban",
+  "Barguna",
+  "Barisal",
+  "Bhola",
+  "Bogura",
+  "Brahmanbaria",
+  "Chandpur",
+  "Chattogram",
+  "Chuadanga",
+  "Cox's Bazar",
+  "Cumilla",
+  "Dhaka",
+  "Dinajpur",
+  "Faridpur",
+  "Feni",
+  "Gaibandha",
+  "Gazipur",
+  "Gopalganj",
+  "Habiganj",
+  "Jamalpur",
+  "Jashore",
+  "Jhalokati",
+  "Jhenaidah",
+  "Joypurhat",
+  "Khagrachhari",
+  "Khulna",
+  "Kishoreganj",
+  "Kurigram",
+  "Kushtia",
+  "Lakshmipur",
+  "Lalmonirhat",
+  "Madaripur",
+  "Magura",
+  "Manikganj",
+  "Meherpur",
+  "Moulvibazar",
+  "Munshiganj",
+  "Mymensingh",
+  "Naogaon",
+  "Narail",
+  "Narayanganj",
+  "Narsingdi",
+  "Natore",
+  "Netrokona",
+  "Nilphamari",
+  "Noakhali",
+  "Pabna",
+  "Panchagarh",
+  "Patuakhali",
+  "Pirojpur",
+  "Rajbari",
+  "Rajshahi",
+  "Rangamati",
+  "Rangpur",
+  "Satkhira",
+  "Shariatpur",
+  "Sherpur",
+  "Sirajganj",
+  "Sunamganj",
+  "Sylhet",
+  "Tangail",
+  "Thakurgaon",
+];
+
 export default function EditTourModal({open, onClose, tourId, getTourData, handleEdit, categories}: Props) {
   const [formData, setFormData] = useState<Partial<ITour>>({});
 
@@ -41,7 +107,20 @@ export default function EditTourModal({open, onClose, tourId, getTourData, handl
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <Input value={formData.title || ""} onChange={(e) => setFormData({...formData, title: e.target.value})} placeholder="Title" required />
-          <Input value={formData.city || ""} onChange={(e) => setFormData({...formData, city: e.target.value})} placeholder="City" required />
+
+          {/* ✅ Tour City Select (Districts) */}
+          <Select value={formData.city || ""} onValueChange={(value) => setFormData({...formData, city: value})}>
+            <SelectTrigger className="w-full">
+              <SelectValue placeholder="Select City/District" />
+            </SelectTrigger>
+            <SelectContent>
+              {districts.map((district) => (
+                <SelectItem key={district} value={district}>
+                  {district}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
 
           {/* ✅ Category Select */}
           <Select
@@ -49,11 +128,14 @@ export default function EditTourModal({open, onClose, tourId, getTourData, handl
             onValueChange={(value) =>
               setFormData({
                 ...formData,
-                category: {id: Number(value), title: categories.find((c) => c.id === Number(value))?.title || ""},
+                category: {
+                  id: Number(value),
+                  title: categories.find((c) => c.id === Number(value))?.title || "",
+                },
               })
             }
           >
-            <SelectTrigger>
+            <SelectTrigger className="w-full">
               <SelectValue placeholder="Select Category" />
             </SelectTrigger>
             <SelectContent>
