@@ -17,6 +17,72 @@ interface Category {
   id: number;
 }
 
+const districts = [
+  "Bagerhat",
+  "Bandarban",
+  "Barguna",
+  "Barisal",
+  "Bhola",
+  "Bogura",
+  "Brahmanbaria",
+  "Chandpur",
+  "Chattogram",
+  "Chuadanga",
+  "Cox's Bazar",
+  "Cumilla",
+  "Dhaka",
+  "Dinajpur",
+  "Faridpur",
+  "Feni",
+  "Gaibandha",
+  "Gazipur",
+  "Gopalganj",
+  "Habiganj",
+  "Jamalpur",
+  "Jashore",
+  "Jhalokati",
+  "Jhenaidah",
+  "Joypurhat",
+  "Khagrachhari",
+  "Khulna",
+  "Kishoreganj",
+  "Kurigram",
+  "Kushtia",
+  "Lakshmipur",
+  "Lalmonirhat",
+  "Madaripur",
+  "Magura",
+  "Manikganj",
+  "Meherpur",
+  "Moulvibazar",
+  "Munshiganj",
+  "Mymensingh",
+  "Naogaon",
+  "Narail",
+  "Narayanganj",
+  "Narsingdi",
+  "Natore",
+  "Netrokona",
+  "Nilphamari",
+  "Noakhali",
+  "Pabna",
+  "Panchagarh",
+  "Patuakhali",
+  "Pirojpur",
+  "Rajbari",
+  "Rajshahi",
+  "Rangamati",
+  "Rangpur",
+  "Satkhira",
+  "Shariatpur",
+  "Sherpur",
+  "Sirajganj",
+  "Sunamganj",
+  "Sylhet",
+  "Tangail",
+  "Thakurgaon",
+];
+
 const CreateTour = ({categories}: {categories: Category[]}) => {
   const [previewImage, setPreviewImage] = useState<string | null>(null);
   const [state, formAction, pending] = useActionState(createTour, null);
@@ -120,14 +186,28 @@ const CreateTour = ({categories}: {categories: Category[]}) => {
           {/* Destination */}
           <Field>
             <FieldLabel htmlFor="destination">Destination</FieldLabel>
-            <Input id="destination" name="destination" placeholder="Educational trip" defaultValue={state?.formData?.destination || ""} />
+            <Input id="destination" name="destination" placeholder="Sundarban" defaultValue={state?.formData?.destination || ""} />
             <InputFieldError state={state} field="destination" />
           </Field>
 
-          {/* City */}
           <Field>
             <FieldLabel htmlFor="city">Tour City</FieldLabel>
-            <Input id="city" name="city" placeholder="Khulna District" defaultValue={state?.formData?.city || ""} />
+            <select
+              id="city"
+              name="city"
+              defaultValue={state?.formData?.city || ""}
+              className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+              disabled={pending}
+            >
+              <option value="" disabled>
+                Select district
+              </option>
+              {districts?.map((district, i) => (
+                <option key={i} value={district}>
+                  {district}
+                </option>
+              ))}
+            </select>
             <InputFieldError state={state} field="city" />
           </Field>
         </div>
