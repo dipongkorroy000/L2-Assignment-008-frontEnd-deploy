@@ -48,11 +48,11 @@ export default function AIToursSuggestion() {
           <Sparkles className="h-6 w-6 text-chart-5" />
           AI Tour Recommendations
         </h2>
-        <p className="text-muted-foreground">Describe your travel preferences and let AI suggest the best tours for you</p>
+        <p className="text-muted-foreground max-md:text-sm">Describe your travel preferences and let AI suggest the best tours for you</p>
       </div>
 
       {/* Input */}
-      <div className="shadow-sm rounded-lg p-6 space-y-4 border max-md:text-sm">
+      <div className="shadow-sm rounded-lg p-6 max-md:p-4 space-y-4 border max-md:text-sm">
         <Textarea
           placeholder="E.g., cultural tour in Dhaka, budget friendly, short duration..."
           value={preferences}

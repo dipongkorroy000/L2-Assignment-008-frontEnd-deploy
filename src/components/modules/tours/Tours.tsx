@@ -29,15 +29,13 @@ const Tours = ({tours}: {tours: CategoryGroup[]}) => {
           {category.tour.length === 0 ? (
             <p className="text-muted-foreground">No tours available in this category.</p>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6 max-h-[80vh] overflow-y-auto scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-gray-300 scrollbar-track-transparent hover:scrollbar-thumb-gray-400">
               {category.tour.map((tour, idx) => (
                 <Card key={idx} className="shadow-sm hover:shadow-lg transition-shadow bg-white">
                   <Link href={`/explore-tours/${tour.id}`}>
                     <CardHeader className="flex justify-between">
-                        <CardTitle className="md:text-xl">{tour.title}</CardTitle>
-                        <CardDescription>
-                          ⭐ {tour.averageRating}
-                        </CardDescription>
+                      <CardTitle className="md:text-xl">{tour.title}</CardTitle>
+                      <CardDescription>⭐ {tour.averageRating}</CardDescription>
                     </CardHeader>
                     <CardContent className="py-3 max-md:py-1 max-md:text-sm">
                       <p>

@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Tours = ({tours}: {tours: ITour[]}) => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6 max-h-[90vh] overflow-y-auto scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-gray-300 scrollbar-track-transparent hover:scrollbar-thumb-gray-400">
       {tours?.map((tour, idx) => (
         <Card key={idx} className="shadow-sm hover:shadow-lg transition-shadow bg-white">
           <Link href={`/explore-tours/${tour.id}`}>

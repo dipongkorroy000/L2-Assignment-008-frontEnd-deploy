@@ -57,6 +57,7 @@ export const getTours = async (queryString?: string) => {
       next: {tags: ["get-tours"]},
     });
     const toursData = await toursResponse.json();
+
     return toursData;
   } catch (error: any) {
     return {
