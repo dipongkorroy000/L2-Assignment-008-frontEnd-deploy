@@ -67,6 +67,7 @@ const TourDetails = async ({params}: {params: Promise<{tourId: string}>}) => {
             <Image
               width={300}
               height={300}
+              loading="eager"
               src={tour.image}
               alt={tour.title || "tour image"}
               className="w-full h-64 object-cover rounded-md mb-6 max-md:mb-2 max-md:h-40"
@@ -123,7 +124,7 @@ const TourDetails = async ({params}: {params: Promise<{tourId: string}>}) => {
             ) : (
               <div className="flex flex-col items-center justify-center gap-3 p-6 border rounded-lg bg-muted/30">
                 <p className="text-sm text-muted-foreground">Please login to request tour</p>
-                <Link href={"/login"} className="text-chart-5 underline">
+                <Link href={`/login?redirect=${tourId}`} className="text-chart-5 underline">
                   Login
                 </Link>
               </div>
