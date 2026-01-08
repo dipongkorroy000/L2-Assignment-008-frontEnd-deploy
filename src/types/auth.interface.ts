@@ -49,3 +49,9 @@ export interface ITouristProfile {
   createdAt: string;
   updatedAt: string;
 }
+
+export enum UserStats {
+  ACTIVE = "ACTIVE",
+  INACTIVE = "INACTIVE",
+  BANNED = "BANNED",
+}

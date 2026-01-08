@@ -5,6 +5,7 @@ import {useEffect, useState} from "react";
 import {Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter} from "@/src/components/ui/dialog";
 import {Button} from "@/src/components/ui/button";
 import {getUser} from "@/src/services/admin/users.service";
+import { DialogDescription } from "@radix-ui/react-dialog";
 
 interface Props {
   open: boolean;
@@ -24,6 +25,7 @@ export default function UserDetailsModal({open, onClose, userId}: Props) {
       <DialogContent>
         <DialogHeader>
           <DialogTitle>User Details</DialogTitle>
+          <DialogDescription></DialogDescription>
         </DialogHeader>
 
         {userData ? (
