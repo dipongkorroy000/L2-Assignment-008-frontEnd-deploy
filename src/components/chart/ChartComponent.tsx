@@ -2,11 +2,11 @@
 
 import {PieChart, Pie, Cell, Tooltip, ResponsiveContainer} from "recharts";
 
-export default function ChartComponent({data}: {data: {totalGuides: number; totalTourists: number}}) {
+export default function ChartComponent({data}: {data: {totalTours: number; totalTourists: number}}) {
   if (!data) return <p>Loading...</p>;
 
   const roleData = [
-    {name: "Guides", value: data.totalGuides},
+    {name: "Tours", value: data.totalTours},
     {name: "Tourists", value: data.totalTourists},
   ];
 
@@ -29,7 +29,7 @@ export default function ChartComponent({data}: {data: {totalGuides: number; tota
               <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
             ))}
           </Pie>
-          <Tooltip />
+          {/* <Tooltip /> */} {/** this is hover effect data showing */}
         </PieChart>
       </ResponsiveContainer>
     </div>
