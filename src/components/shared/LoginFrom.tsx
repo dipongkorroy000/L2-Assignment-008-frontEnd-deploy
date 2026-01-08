@@ -19,7 +19,8 @@ const LoginForm = ({redirect}: {redirect: string | undefined}) => {
 
   return (
     <form action={formAction}>
-      {redirect && <input type="hidden" name="redirect" value={`explore-tours/${redirect}`}></input>}
+      {redirect && <input type="hidden" name="redirect" value={`/explore-tours/${redirect}`} />}
+
       <FieldGroup>
         <div className="grid grid-cols-1 gap-4">
           {/* Email */}

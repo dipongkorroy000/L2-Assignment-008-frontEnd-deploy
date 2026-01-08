@@ -78,6 +78,11 @@ export const loginUser = async (_currentState: any, formData: any): Promise<any>
       // when user get any protected route then navigate login and again protected route navigate
       const requestedPath = redirectTo.toString();
 
+      // If you want to skip role validation for tour pages:
+      if (requestedPath.startsWith("/explore-tours/")) {
+        redirect(requestedPath);
+      }
+
       if (isValidRedirectForRole(requestedPath, userRole)) redirect(requestedPath);
       else redirect(getDefaultDashboardRoute(userRole));
       // ------
