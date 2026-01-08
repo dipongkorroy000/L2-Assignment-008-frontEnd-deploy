@@ -18,4 +18,6 @@ export interface ITour {
   averageRating?: number;
   createdAt?: Date;
   isActive: boolean;
+  totalRequestForm?: number;
+  guide?: {email: string};
 }
