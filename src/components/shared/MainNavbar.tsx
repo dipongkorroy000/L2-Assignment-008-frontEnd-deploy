@@ -23,7 +23,7 @@ export const MainNavbar = ({profile}: {profile: any}) => {
         <h1 className="text-chart-5">Local Guide</h1>
       </Link>
 
-      <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
+      <nav className="hidden lg:flex items-center space-x-6 text-sm font-medium">
         {navItems.map((link) => (
           <Link key={link.label} href={link.href} className="hover:text-primary transition-colors text-lg">
             {link.label}
@@ -56,7 +56,7 @@ export const MainNavbar = ({profile}: {profile: any}) => {
       </nav>
 
       {/* Mobile Menu */}
-      <div className="md:hidden">
+      <div className="lg:hidden">
         <Sheet>
           <SheetTrigger asChild>
             <Button variant="outline">

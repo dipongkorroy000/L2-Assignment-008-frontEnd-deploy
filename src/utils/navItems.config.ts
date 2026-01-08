@@ -138,6 +138,12 @@ export const adminNavItems: NavSection[] = [
     title: "Tours Management",
     items: [
       {
+        title: "Tours",
+        href: "/admin/dashboard/tours-management",
+        icon: "TramFront",
+        roles: ["ADMIN"],
+      },
+      {
         title: "Completed  Tours",
         href: "/admin/dashboard/completed-tours",
         icon: "CheckCheck",
