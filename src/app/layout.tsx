@@ -16,6 +16,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Local Guide",
   description: "Explore Bangladesh like a local",
+  icons: {icon: "plane-3989.svg"},
 };
 
 export default function RootLayout({children}: Readonly<{children: React.ReactNode}>) {

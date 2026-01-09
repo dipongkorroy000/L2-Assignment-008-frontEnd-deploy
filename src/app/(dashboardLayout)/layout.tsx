@@ -1,8 +1,15 @@
-export const dynamic = "force-dynamic";
-
 import Navbar from "@/src/components/modules/dashboard/Navbar";
 import Sidebar from "@/src/components/modules/dashboard/Sidebar";
+import type {Metadata} from "next";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "Local Guide | Dashboard",
+  description: "Explore Bangladesh like a local",
+  icons: {icon: "/plane-3989.svg"},
+};
+
+export const dynamic = "force-dynamic";
 
 const DashboardLayout = async ({children}: {children: React.ReactNode}) => {
   return (
