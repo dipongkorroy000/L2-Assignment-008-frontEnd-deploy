@@ -1,6 +1,12 @@
 import MyProfile from "@/src/components/modules/profile/MyProfile";
 import LogoutButton from "@/src/components/static/LogoutBtn";
 import getProfile from "@/src/services/authentication/profile";
+import {Metadata} from "next";
+
+export const metadata: Metadata = {
+  title: "Local Guide | Profile",
+  description: "Profile Setting",
+};
 
 const ProfilePage = async () => {
   const userInfo = await getProfile();

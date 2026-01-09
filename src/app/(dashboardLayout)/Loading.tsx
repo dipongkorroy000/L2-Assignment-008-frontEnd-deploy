@@ -1,13 +1,7 @@
-"use client";
+import {DashboardSkeleton} from "@/src/components/modules/dashboard/DashboardSkeleton";
 
-import {Loader2} from "lucide-react";
-
-const Loading = () => {
-  return (
-    <div className="flex h-screen items-center justify-center">
-      <Loader2 className="h-10 w-10 animate-spin text-primary" />
-    </div>
-  );
+const AdminDashboardLoading = () => {
+  return <DashboardSkeleton />;
 };
 
-export default Loading;
+export default AdminDashboardLoading;
