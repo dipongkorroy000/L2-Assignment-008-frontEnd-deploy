@@ -152,7 +152,9 @@ export const completedRequestedTours = async () => {
 
 export const completedToursReviewProvide = async () => {
   try {
-    const req = await server_fetch.get("/request-tour/completed-review-tours");
+    const req = await server_fetch.get("/request-tour/completed-review-tours", {
+      next: {tags: ["reviews"]},
+    });
     const result = await req.json();
 
     return result;

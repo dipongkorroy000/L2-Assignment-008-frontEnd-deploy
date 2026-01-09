@@ -2,6 +2,7 @@
 "use server";
 
 import {server_fetch} from "@/src/lib/server-fetch";
+import {revalidateTag} from "next/cache";
 
 export const createReview = async (requestedFormId: number, payload: {rating: number; comment: string}) => {
   try {
@@ -10,6 +11,8 @@ export const createReview = async (requestedFormId: number, payload: {rating: nu
       body: JSON.stringify(payload),
     });
     const result = await res.json();
+
+    revalidateTag("reviews", {expire: 0}); // recall requestedForm info
 
     return result;
   } catch (error: any) {

@@ -3,8 +3,7 @@ import {getPayments} from "@/src/services/public/payment.service";
 
 const TouristPaymentsPage = async () => {
   const payments = await getPayments();
-  const data = payments.data; // [{payments: [{amount, updatedAt, status, transactionId}], tour: {title}}]
-
+  const data = payments.data;
 
   return (
     <div className="max-w-5xl mx-auto my-10">
