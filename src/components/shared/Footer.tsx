@@ -64,16 +64,11 @@ export default function Footer() {
           <h3 className="text-lg font-semibold text-white mb-4">Contact</h3>
           <p className="text-sm mb-2">
             Email:{" "}
-            <Link href="mailto:dipongkorroy000@gmail.com" className="hover:text-primary transition-colors">
+            <Link href="mailto:dipongkorroy000@gmail.com" target="_blank" className="hover:text-primary transition-colors">
               dipongkorroy000@gmail.com
             </Link>
           </p>
-          <p className="text-sm mb-4">
-            Phone:{" "}
-            <Link href="tel:+8801799760840" className="hover:text-primary">
-              +880-1799-760840
-            </Link>
-          </p>
+          <p className="text-sm mb-4">Phone: +880-1799-760840</p>
 
           <div className="flex space-x-3">
             <Link href="https://www.linkedin.com/in/dipongkor" target="_blank" className="p-2 rounded-full bg-gray-700 hover:bg-primary transition-colors">
