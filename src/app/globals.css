@@ -167,3 +167,13 @@
 .wrapper {
   /* background-color: #FFFFFF; */
 }
+
+/* top bar loading effect */
+#nprogress .bar {
+  background: #00c853;
+  height: 5px;
+}
+
+#nprogress .peg {
+  box-shadow: 0 0 10px #00c853, 0 0 5px #00c853;
+}
