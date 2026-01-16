@@ -20,7 +20,7 @@ export default function HomePage() {
           <AboutComponent></AboutComponent>
         </section>
 
-        <section className="max-w-7xl mx-auto py-20 max-md:py-10 px-5">
+        <section className="max-w-7xl mx-auto py-28 max-md:py-10 px-5">
           <PrivacyComponent></PrivacyComponent>
         </section>
 

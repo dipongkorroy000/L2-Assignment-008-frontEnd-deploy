@@ -6,6 +6,8 @@ import {CircleUserRound, Menu} from "lucide-react";
 import {Sheet, SheetContent, SheetTitle, SheetTrigger} from "../ui/sheet";
 import {getDefaultDashboardRoute} from "@/src/utils/auth-utils";
 import Image from "next/image";
+import {Popover, PopoverTrigger, PopoverContent} from "@/src/components/ui/popover";
+import LogoutBtn from "../static/LogoutBtn";
 
 export const MainNavbar = ({profile}: {profile: any}) => {
   const navItems = [
@@ -29,13 +31,11 @@ export const MainNavbar = ({profile}: {profile: any}) => {
             {link.label}
           </Link>
         ))}
-
         {!profile && (
           <Link href="/login" className="text-lg bg-primary rounded-2xl py-1 px-4 text-white hover:bg-chart-4 transition-colors">
             Login
           </Link>
         )}
-
         {profile && (
           <Link href={dashboardPath} className="hover:text-primary transition-colors text-lg">
             Dashboard
@@ -43,15 +43,39 @@ export const MainNavbar = ({profile}: {profile: any}) => {
         )}
 
         {profile && (
-          <Link href="/my-profile">
-            {!profilePhoto && <CircleUserRound />}
+          <Popover>
+            <PopoverTrigger asChild>
+              {!profilePhoto ? <CircleUserRound size={26} /> : <Image src={profilePhoto} alt="Profile Photo" width={32} height={32} className="rounded-full" />}
+            </PopoverTrigger>
 
-            {profilePhoto && (
-              <Button variant="outline" size="icon" className="rounded-full">
-                <Image src={profilePhoto} alt="Profile Photo" width={32} height={32} className="rounded-full cursor-pointer" />
-              </Button>
-            )}
-          </Link>
+            <PopoverContent className="w-64 p-4 space-y-3 mt-2">
+              <div className="flex items-center space-x-3">
+                {!profilePhoto ? (
+                  <CircleUserRound size={22} />
+                ) : (
+                  <Image src={profilePhoto} alt="Profile Photo" width={32} height={32} className="rounded-full" />
+                )}
+                <div>
+                  <p className="font-semibold">{profile.name || "Your Name"}</p>
+                  <p className="text-sm text-muted-foreground">{profile.email}</p>
+                </div>
+              </div>
+
+              <Link href="/my-profile" className="block">
+                <Button className="w-full bg-primary hover:bg-chart-4 cursor-pointer text-white">My Profile</Button>
+              </Link>
+
+              <div className="space-y-3 text-sm">
+                <Link href="/settings" className="block font-semibold hover:text-primary">
+                  Settings
+                </Link>
+                <Link href="/blogs" className="block font-semibold hover:text-primary">
+                  Blogs
+                </Link>
+                <LogoutBtn></LogoutBtn>
+              </div>
+            </PopoverContent>
+          </Popover>
         )}
       </nav>
 
@@ -81,9 +105,20 @@ export const MainNavbar = ({profile}: {profile: any}) => {
                   </Link>
                 )}
                 {profile && (
-                  <Link href={dashboardPath} className="hover:text-primary transition-colors text-lg">
-                    Dashboard
-                  </Link>
+                  <>
+                    <Link href={dashboardPath} className="block font-medium pb-2 text-lg">
+                      Dashboard
+                    </Link>
+                    <Link href="/my-profile" className="block font-medium py-2 text-lg">
+                      My Profile
+                    </Link>
+                    <Link href="/settings" className="block font-medium py-2 text-lg">
+                      Settings
+                    </Link>
+                    <Link href="/blogs" className="block font-medium py-2 text-lg">
+                      Blogs
+                    </Link>
+                  </>
                 )}
               </div>
             </nav>
