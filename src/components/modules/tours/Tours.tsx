@@ -2,7 +2,7 @@ import {ITour} from "@/src/types/tour.interface";
 import {Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle} from "../../ui/card";
 import Image from "next/image";
 import Link from "next/link";
-import {FileSearch} from "lucide-react";
+import SearchTourBtn from "../../static/SearchTourBtn";
 
 interface CategoryGroup {
   id: number;
@@ -15,10 +15,7 @@ const Tours = ({tours}: {tours: CategoryGroup[]}) => {
     <div className="max-w-7xl mx-auto py-20 max-md:py-5 px-5 max-xl:mx-10 max-md:mx-0">
       {/* Search Button */}
       <div className="bg-secondary px-5 py-2 rounded-2xl flex justify-end">
-        <Link href={"/find-tour"} className="flex text-chart-5 gap-1 items-center bg-white px-4 py-1 rounded-3xl hover:bg-chart-4 hover:text-white">
-          <strong className="text-xl max-md:text-lg">Search Tour</strong>
-          <FileSearch size={30} className="cursor-pointer" />
-        </Link>
+        <SearchTourBtn></SearchTourBtn>
       </div>
 
       {/* Category Groups */}

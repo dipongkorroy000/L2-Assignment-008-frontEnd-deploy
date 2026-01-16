@@ -2,12 +2,13 @@
 
 import Link from "next/link";
 import {Button} from "../ui/button";
-import {CircleUserRound, Menu} from "lucide-react";
+import {Menu} from "lucide-react";
 import {Sheet, SheetContent, SheetTitle, SheetTrigger} from "../ui/sheet";
 import {getDefaultDashboardRoute} from "@/src/utils/auth-utils";
 import Image from "next/image";
 import {Popover, PopoverTrigger, PopoverContent} from "@/src/components/ui/popover";
 import LogoutBtn from "../static/LogoutBtn";
+import {LuCircleUser} from "react-icons/lu";
 
 export const MainNavbar = ({profile}: {profile: any}) => {
   const navItems = [
@@ -45,16 +46,12 @@ export const MainNavbar = ({profile}: {profile: any}) => {
         {profile && (
           <Popover>
             <PopoverTrigger asChild>
-              {!profilePhoto ? <CircleUserRound size={26} /> : <Image src={profilePhoto} alt="Profile Photo" width={32} height={32} className="rounded-full" />}
+              {!profilePhoto ? <LuCircleUser size={26} /> : <Image src={profilePhoto} alt="Profile Photo" width={32} height={32} className="rounded-full" />}
             </PopoverTrigger>
 
             <PopoverContent className="w-64 p-4 space-y-3 mt-2">
               <div className="flex items-center space-x-3">
-                {!profilePhoto ? (
-                  <CircleUserRound size={22} />
-                ) : (
-                  <Image src={profilePhoto} alt="Profile Photo" width={32} height={32} className="rounded-full" />
-                )}
+                {!profilePhoto ? <LuCircleUser size={26} /> : <Image src={profilePhoto} alt="Profile Photo" width={32} height={32} className="rounded-full" />}
                 <div>
                   <p className="font-semibold">{profile.name || "Your Name"}</p>
                   <p className="text-sm text-muted-foreground">{profile.email}</p>
