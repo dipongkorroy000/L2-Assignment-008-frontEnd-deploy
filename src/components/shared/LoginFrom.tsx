@@ -9,6 +9,13 @@ import {Input} from "@/src/components/ui/input";
 import {loginUser} from "@/src/services/authentication/loginUser";
 import {inputFieldError} from "@/src/lib/inputFieldError";
 import Link from "next/link";
+import {startTransition} from "react";
+
+const demoUsers = {
+  admin: "superadmin@gmail.com",
+  tourist: "touristone@gmail.com",
+  guide: "guideone@gmail.com",
+};
 
 const LoginForm = ({redirect}: {redirect: string | undefined}) => {
   const [state, formAction, isPending] = useActionState(loginUser, null);
@@ -17,8 +24,24 @@ const LoginForm = ({redirect}: {redirect: string | undefined}) => {
     if (state && !state.success && state.message) toast.error(state.message);
   });
 
+  // helper to trigger demo login
+
+  const handleDemoLogin = (email: string) => {
+    const formData = new FormData();
+    formData.append("email", email);
+    formData.append("password", "123456");
+    
+    if (redirect) {
+      formData.append("redirect", `/explore-tours/${redirect}`);
+    }
+
+    startTransition(() => {
+      formAction(formData);
+    });
+  };
+
   return (
-    <form action={formAction}>
+    <form action={formAction} className="space-y-4">
       {redirect && <input type="hidden" name="redirect" value={`/explore-tours/${redirect}`} />}
 
       <FieldGroup>
@@ -27,7 +50,6 @@ const LoginForm = ({redirect}: {redirect: string | undefined}) => {
           <Field>
             <FieldLabel htmlFor="email">Email</FieldLabel>
             <Input id="email" name="email" type="email" placeholder="m@example.com" className="max-md:text-sm" />
-
             {inputFieldError("email", state) && <FieldDescription className="text-red-600">{inputFieldError("email", state)}</FieldDescription>}
           </Field>
 
@@ -39,6 +61,7 @@ const LoginForm = ({redirect}: {redirect: string | undefined}) => {
           </Field>
         </div>
 
+        {/* Submit button */}
         <FieldGroup className="mt-4 max-md:mt-2">
           <Field>
             <Button type="submit" disabled={isPending}>
@@ -54,6 +77,19 @@ const LoginForm = ({redirect}: {redirect: string | undefined}) => {
           </Field>
         </FieldGroup>
       </FieldGroup>
+
+      {/* Demo login buttons */}
+      <div className="flex flex-col gap-2 mt-6">
+        <Button type="button" variant="outline" onClick={() => handleDemoLogin(demoUsers.admin)}>
+          Demo Admin Login
+        </Button>
+        <Button type="button" variant="outline" onClick={() => handleDemoLogin(demoUsers.tourist)}>
+          Demo Tourist Login
+        </Button>
+        <Button type="button" variant="outline" onClick={() => handleDemoLogin(demoUsers.guide)}>
+          Demo Guide Login
+        </Button>
+      </div>
     </form>
   );
 };
