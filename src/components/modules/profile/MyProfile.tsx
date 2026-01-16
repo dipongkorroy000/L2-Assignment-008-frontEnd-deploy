@@ -102,7 +102,7 @@ const MyProfile = ({userInfo}: MyProfileProps) => {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 max-w-7xl mx-auto">
       {/* Page Header */}
       <div>
         <Link href={"/"}>
