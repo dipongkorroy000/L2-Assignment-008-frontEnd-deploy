@@ -8,7 +8,7 @@ import {server_fetch} from "@/src/lib/server-fetch";
 import getProfile from "./profile";
 import {UserRole} from "@/src/types";
 import {getDefaultDashboardRoute, isValidRedirectForRole} from "@/src/utils/auth-utils";
-import {passwordUpdateSchema, resetPasswordSchema} from "@/src/zod/auth.validation";
+import {resetPasswordSchema} from "@/src/zod/auth.validation";
 import {getCookie} from "@/src/utils/serverToken";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
@@ -96,19 +96,16 @@ export async function resetPassword(_prevState: any, formData: FormData) {
   }
 }
 
-export async function updatePassword(data: {oldPassword: string; newPassword: string}) {
+export async function updateUserPassword(data: {oldPassword: string; newPassword: string}) {
   const accessToken = await getCookie("accessToken");
   if (!accessToken) throw new Error("User not authenticated");
 
-  const validatedPayload = zodValidator(data, passwordUpdateSchema);
-
-  if (!validatedPayload.success && validatedPayload.errors) {
-    return {success: false, message: "Validation failed"};
-  }
-
   const response = await server_fetch.patch("/auth/password-update", {
-    body: JSON.stringify({payload: validatedPayload}),
-    headers: {Authorization: accessToken, "Content-Type": "application/json"},
+    body: JSON.stringify(data),
+    headers: {
+      Authorization: accessToken,
+      "Content-Type": "application/json",
+    },
   });
 
   const result = await response.json();

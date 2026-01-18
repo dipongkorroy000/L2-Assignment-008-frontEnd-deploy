@@ -9,7 +9,7 @@ import {Input} from "@/src/components/ui/input";
 import {Switch} from "@/src/components/ui/switch";
 import {useForm} from "react-hook-form";
 import {toast} from "sonner";
-import { updatePassword } from "@/src/services/authentication/auth.service";
+import {updateUserPassword} from "@/src/services/authentication/auth.service";
 
 type PasswordForm = {
   oldPassword: string;
@@ -28,11 +28,20 @@ const SettingsPage = () => {
       toast.error("Password do not match!");
       return;
     }
-    // TODO: call API to update password
+
+    if (data.newPassword == data.oldPassword) {
+      toast.error("Password is same");
+      return;
+    }
     // console.log("Password update payload:", data);
 
-    const result = await updatePassword(data);
-    console.log(result);
+    const result = await updateUserPassword({newPassword: data.newPassword, oldPassword: data.oldPassword});
+
+    if (result.success) {
+      toast.success(result.message);
+    } else {
+      toast.error(result.message);
+    }
 
     reset();
     setOpen(false);
