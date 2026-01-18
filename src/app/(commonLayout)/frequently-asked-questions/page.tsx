@@ -1,18 +1,21 @@
 "use client";
 
+import GuideHeader from "@/src/components/shared/ContactHeader";
 import {Accordion, AccordionItem, AccordionTrigger, AccordionContent} from "@/src/components/ui/accordion";
 
 const FAQPage = () => {
   return (
     <section className="bg-gradient-to-r from-primary-foreground via-white to-primary-foreground min-h-screen">
-      <div className="max-w-7xl mx-auto py-20 space-y-8 max-md:py-10 max-xl:mx-10 max-md:mx-0 px-5">
+      <div className="max-w-7xl mx-auto py-10 max-md:py-10 max-xl:mx-10 max-md:mx-0 px-5">
+        <GuideHeader></GuideHeader>
+
         {/* Page Header */}
-        <div className="text-center space-y-2">
+        <div className="text-center space-y-2 md:mt-16 mt-10">
           <h1 className="text-3xl font-semibold max-md:text-xl">Frequently Asked Questions</h1>
         </div>
 
         {/* FAQ Accordion */}
-        <Accordion type="single" collapsible className="w-full space-y-4">
+        <Accordion type="single" collapsible className="w-full space-y-4 mt-5">
           <AccordionItem value="q1">
             <AccordionTrigger className="text-xl max-md:text-sm">How do I book a tour?</AccordionTrigger>
             <AccordionContent className="text-muted-foreground text-lg max-md:text-sm">
