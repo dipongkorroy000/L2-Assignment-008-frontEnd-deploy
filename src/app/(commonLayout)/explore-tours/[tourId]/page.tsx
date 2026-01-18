@@ -7,6 +7,7 @@ import RequestModal from "@/src/components/modules/tours/RequestedTourModal";
 import {getCookie} from "@/src/utils/serverToken";
 import Link from "next/link";
 import BackBtn from "@/src/components/static/BackBtn";
+import getProfile from "@/src/services/authentication/profile";
 
 interface Guide {
   id: number;
@@ -47,6 +48,7 @@ const TourDetails = async ({params}: {params: Promise<{tourId: string}>}) => {
   const {tourId: id} = await params;
 
   const accessToken = await getCookie("accessToken");
+  const userInfo = await getProfile();
 
   const tour: ITour = await getTour(Number(id));
 
@@ -120,7 +122,13 @@ const TourDetails = async ({params}: {params: Promise<{tourId: string}>}) => {
           {/* Request Modal */}
           <CardContent>
             {accessToken ? (
-              <RequestModal guideId={tour.guide.id} tourId={Number(id)} />
+              userInfo.status === "INACTIVE" ? (
+                <div className="flex flex-col items-center justify-center gap-3 p-6 border rounded-lg bg-red-100">
+                  <p className="text-sm text-red-600 font-medium">⚠️ Your profile status is INACTIVE. You cannot request a tour.</p>
+                </div>
+              ) : (
+                <RequestModal guideId={tour.guide.id} tourId={Number(id)} />
+              )
             ) : (
               <div className="flex flex-col items-center justify-center gap-3 p-6 border rounded-lg bg-muted/30">
                 <p className="text-sm text-muted-foreground">Please login to request tour</p>

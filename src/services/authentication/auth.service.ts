@@ -111,3 +111,16 @@ export async function updateUserPassword(data: {oldPassword: string; newPassword
   const result = await response.json();
   return result;
 }
+
+export async function userProfileStatusUpdate() {
+  const accessToken = await getCookie("accessToken");
+  if (!accessToken) throw new Error("User not authenticated");
+
+  const response = await server_fetch.patch("/auth/profile-status-update");
+
+  const result = await response.json();
+
+  revalidateTag("user-info", {expire: 0}); // recall user info
+
+  return result;
+}

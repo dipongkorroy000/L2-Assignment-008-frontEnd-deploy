@@ -1,12 +1,17 @@
 "use client";
 
 import {useRouter} from "next/navigation";
-import {Button} from "../ui/button";
+import {ArrowLeft} from "lucide-react";
 
 const BackBtn = () => {
   const router = useRouter();
 
-  return <Button onClick={() => router.back()} className="cursor-pointer">Back</Button>;
+  return (
+    <button onClick={() => router.back()} className="flex gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/80 transition-colors">
+      <ArrowLeft />
+      Back
+    </button>
+  );
 };
 
 export default BackBtn;
