@@ -17,7 +17,7 @@ const demoUsers = {
   guide: "guideone@gmail.com",
 };
 
-const LoginForm = ({redirect}: {redirect: string | undefined}) => {
+const LoginForm = ({redirect, tourId}: {redirect: string | undefined; tourId: string | undefined}) => {
   const [state, formAction, isPending] = useActionState(loginUser, null);
 
   useEffect(() => {
@@ -30,19 +30,21 @@ const LoginForm = ({redirect}: {redirect: string | undefined}) => {
     const formData = new FormData();
     formData.append("email", email);
     formData.append("password", "123456");
-    
-    if (redirect) {
-      formData.append("redirect", `/explore-tours/${redirect}`);
+
+    if (tourId) {
+      formData.append("redirect", `/explore-tours/${tourId}`);
+    } else if (redirect) {
+      formData.append("redirect", `${redirect}`);
     }
 
-    startTransition(() => {
-      formAction(formData);
-    });
+    startTransition(() => formAction(formData));
   };
 
   return (
     <form action={formAction} className="space-y-4">
-      {redirect && <input type="hidden" name="redirect" value={`/explore-tours/${redirect}`} />}
+      {/* {redirect && <input type="hidden" name="redirect" value={`/explore-tours/${redirect}`} />} */}
+      {tourId && <input type="hidden" name="redirect" value={`/explore-tours/${tourId}`} />}
+      {redirect && <input type="hidden" name="redirect" value={`${redirect}`} />}
 
       <FieldGroup>
         <div className="grid grid-cols-1 gap-4">

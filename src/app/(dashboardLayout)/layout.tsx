@@ -6,7 +6,6 @@ import React from "react";
 export const metadata: Metadata = {
   title: "Local Guide | Dashboard",
   description: "Explore Bangladesh like a local",
-  icons: {icon: "/plane-3989.svg"},
 };
 
 export const dynamic = "force-dynamic";

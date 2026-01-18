@@ -44,11 +44,11 @@ interface ITour {
 }
 
 const TourDetails = async ({params}: {params: Promise<{tourId: string}>}) => {
-  const {tourId} = await params;
+  const {tourId: id} = await params;
 
   const accessToken = await getCookie("accessToken");
 
-  const tour: ITour = await getTour(Number(tourId));
+  const tour: ITour = await getTour(Number(id));
 
   return (
     <section className="py-20 bg-gradient-to-r from-primary-foreground via-white to-primary-foreground max-md:py-5">
@@ -92,7 +92,7 @@ const TourDetails = async ({params}: {params: Promise<{tourId: string}>}) => {
               </p>
               <div className="flex gap-5 items-center">
                 <strong>Languages: </strong>
-                {tour.guide.languages.map((language, idx) => (
+                {tour?.guide.languages?.map((language, idx) => (
                   <p key={idx} className="border rounded-2xl px-3 py-1">
                     {language}
                   </p>
@@ -120,11 +120,11 @@ const TourDetails = async ({params}: {params: Promise<{tourId: string}>}) => {
           {/* Request Modal */}
           <CardContent>
             {accessToken ? (
-              <RequestModal guideId={tour.guide.id} tourId={Number(tourId)} />
+              <RequestModal guideId={tour.guide.id} tourId={Number(id)} />
             ) : (
               <div className="flex flex-col items-center justify-center gap-3 p-6 border rounded-lg bg-muted/30">
                 <p className="text-sm text-muted-foreground">Please login to request tour</p>
-                <Link href={`/login?redirect=${tourId}`} className="text-chart-5 underline">
+                <Link href={`/login?tourId=${id}`} className="text-chart-5 underline">
                   Login
                 </Link>
               </div>

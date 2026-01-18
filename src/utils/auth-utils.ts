@@ -6,7 +6,7 @@ type RouteConfig = {
 };
 
 const commonRoutes: RouteConfig = {
-  exact: ["/my-profile", "/settings", "/change-password"],
+  exact: ["/my-profile", "/settings", "/blogs"],
   patterns: [],
 };
 

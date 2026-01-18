@@ -1,6 +1,6 @@
 import LoginForm from "@/src/components/shared/LoginFrom";
 
-const LoginPage = async ({searchParams}: {searchParams?: Promise<{redirect?: string}>}) => {
+const LoginPage = async ({searchParams}: {searchParams?: Promise<{redirect?: string, tourId?: string}>}) => {
   const param = await searchParams;
 
   return (
@@ -11,7 +11,7 @@ const LoginPage = async ({searchParams}: {searchParams?: Promise<{redirect?: str
             <h1 className="text-3xl font-bold max-md:text-xl">Welcome Back</h1>
             <p className="text-gray-500 max-md:text-sm">Enter your credentials to access your account</p>
           </div>
-          <LoginForm redirect={param?.redirect} />
+          <LoginForm redirect={param?.redirect} tourId={param?.tourId} />
         </div>
       </div>
     </div>
