@@ -10,14 +10,16 @@ const AdminDashboardPage = async () => {
   const messages = await getMessages();
 
   return (
-    <div className="max-w-6xl mx-auto my-10">
+    <div className="max-w-6xl mx-auto my-10 space-y-10">
       <h2 className="text-2xl font-bold mb-6">Admin Dashboard Page</h2>
       <DashboardStats data={data} />
 
-      {messages?.data?.length > 0 &&
-        messages.data.map((user: {name: string; email: string; message: string}, i: number) => (
-          <MessageSheetComponent key={i} name={user.name} message={user.message} email={user.email}></MessageSheetComponent>
-        ))}
+      <div className="max-h-screen overflow-y-auto">
+        {messages?.data?.length > 0 &&
+          messages.data.map((user: {name: string; email: string; message: string}, i: number) => (
+            <MessageSheetComponent key={i} name={user.name} message={user.message} email={user.email}></MessageSheetComponent>
+          ))}
+      </div>
     </div>
   );
 };

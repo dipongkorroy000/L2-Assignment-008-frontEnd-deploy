@@ -14,7 +14,7 @@ const MessageSheetComponent = ({name, email, message}: IMessage) => {
       <CardHeader>
         <CardTitle className="text-lg font-semibold">Message from {name}</CardTitle>
       </CardHeader>
-      <CardContent className="space-y-2">
+      <CardContent>
         <p className="text-sm text-muted-foreground">
           <strong>Email:</strong> {email}
         </p>
