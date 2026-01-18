@@ -120,7 +120,7 @@ const MyProfile = ({userInfo}: MyProfileProps) => {
                   <div className="relative group">
                     <Avatar className="h-32 w-32 ring-2 ring-primary">
                       {previewImage || profilePhoto ? (
-                        <AvatarImage src={previewImage || (profilePhoto as string)} alt={userInfo.name} />
+                        <AvatarImage src={previewImage || (profilePhoto as string)} alt={userInfo.name} className="object-cover"/>
                       ) : (
                         <AvatarFallback className="text-3xl">{nameFormate(userInfo?.name)}</AvatarFallback>
                       )}

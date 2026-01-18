@@ -46,23 +46,30 @@ export const MainNavbar = ({profile}: {profile: any}) => {
         {profile && (
           <Popover>
             <PopoverTrigger asChild>
-              {!profilePhoto ? <LuCircleUser size={26} /> : <Image src={profilePhoto} alt="Profile Photo" width={32} height={32} className="rounded-full" />}
+              {!profilePhoto ? (
+                <LuCircleUser size={26} />
+              ) : (
+                <Image src={profilePhoto} alt="Profile Photo" width={200} height={200} className="rounded-full h-10 w-10 object-cover" />
+              )}
             </PopoverTrigger>
 
             <PopoverContent className="w-64 p-4 space-y-3 mt-2">
-              <div className="flex items-center space-x-3">
-                {!profilePhoto ? <LuCircleUser size={26} /> : <Image src={profilePhoto} alt="Profile Photo" width={32} height={32} className="rounded-full" />}
+              <div className="flex items-center space-x-3 border-b pb-2">
+                {!profilePhoto ? (
+                  <LuCircleUser size={26} />
+                ) : (
+                  <Image src={profilePhoto} alt="Profile Photo" width={200} height={200} className="rounded-full h-10 w-10 object-cover" />
+                )}
                 <div>
                   <p className="font-semibold">{profile.name || "Your Name"}</p>
                   <p className="text-sm text-muted-foreground">{profile.email}</p>
                 </div>
               </div>
 
-              <Link href="/my-profile" className="block">
-                <Button className="w-full bg-primary hover:bg-chart-4 cursor-pointer text-white">My Profile</Button>
-              </Link>
-
               <div className="space-y-3 text-sm">
+                <Link href="/my-profile" className="block font-semibold hover:text-primary">
+                  My Profile
+                </Link>
                 <Link href="/settings" className="block font-semibold hover:text-primary">
                   Settings
                 </Link>
@@ -85,7 +92,7 @@ export const MainNavbar = ({profile}: {profile: any}) => {
             </Button>
           </SheetTrigger>
 
-          <SheetContent side="right" className="w-[300px] p-4">
+          <SheetContent side="right" className="p-4">
             <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
             <nav className="flex flex-col space-y-4 mt-8">
               {navItems.map((link) => (

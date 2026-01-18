@@ -15,7 +15,7 @@ const ProfilePage = async () => {
     <section className="bg-gray-100 min-h-screen py-8 px-20 max-md:px-5 bg-gradient-to-r from-primary-foreground via-white to-primary-foreground">
       <MyProfile userInfo={userInfo}></MyProfile>
 
-      <div className="my-10 max-w-7xl mx-auto">
+      <div className="my-10 max-w-7xl mx-auto border rounded-md">
         <LogoutButton></LogoutButton>
       </div>
     </section>

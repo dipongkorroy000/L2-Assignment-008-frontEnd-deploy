@@ -12,8 +12,8 @@ const LogoutBtn = () => {
   };
 
   return (
-    <Button variant={"outline"} onClick={handleLogout} className="cursor-pointer w-full text-red-600 hover:text-red-600 hover:bg-red-50">
-      <LogOut/> Logout
+    <Button variant={"outline"} onClick={handleLogout} className="cursor-pointer border-none w-full text-red-600 hover:text-red-600 hover:bg-red-50">
+      <LogOut /> Logout
     </Button>
   );
 };
