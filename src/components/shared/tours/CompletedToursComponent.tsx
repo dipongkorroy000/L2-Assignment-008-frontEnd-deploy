@@ -2,7 +2,6 @@ import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/s
 import {ICompletedTours} from "@/src/types/tourForm.interface";
 
 const CompletedToursComponent = ({data}: {data: ICompletedTours[]}) => {
-  console.log(data);
   return (
     <div className="max-w-6xl mx-auto my-10">
       <h2 className="text-2xl font-bold mb-6">Completed Tours</h2>

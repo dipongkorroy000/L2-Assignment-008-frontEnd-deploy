@@ -8,3 +8,18 @@ export interface IPayment {
 export interface ITourPayment {
   payments: IPayment;
 }
+
+export interface PaymentPropsAdmin {
+  transactionId: string;
+  amount: number;
+  status: string;
+  updatedAt: string;
+  requestForm?: {
+    guide?: {
+      email?: string;
+    };
+    tourist?: {
+      email?: string;
+    };
+  };
+}

@@ -1,10 +1,10 @@
 import {getPayments} from "@/src/services/public/payment.service";
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/src/components/ui/table";
+import {PaymentPropsAdmin} from "@/src/types/payment.interface";
 
 const AdminPaymentsPage = async () => {
   const payments = await getPayments();
-  const data = payments.data || [];
-  // [{amount, updatedAt, transactionId, status, requestForm: {guide: {email}, tourist: {email}}}]
+  const data: PaymentPropsAdmin[] = payments.data || [];
 
   return (
     <div className="max-w-6xl mx-auto my-10">
@@ -23,7 +23,7 @@ const AdminPaymentsPage = async () => {
         </TableHeader>
         <TableBody>
           {data.length > 0 ? (
-            data.map((payment: any, idx: number) => (
+            data.map((payment, idx) => (
               <TableRow key={idx}>
                 <TableCell>{payment.transactionId}</TableCell>
                 <TableCell>{payment.amount} BDT</TableCell>

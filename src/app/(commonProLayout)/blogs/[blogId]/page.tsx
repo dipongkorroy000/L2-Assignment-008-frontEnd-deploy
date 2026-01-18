@@ -8,7 +8,7 @@ const BlogPage = async ({params}: {params: Promise<{blogId: string}>}) => {
   const blog = {
     id: blogId,
     title: "Exploring Sylhet with Local Guides",
-    image: "/sylhet.jpg",
+    image: "https://iili.io/fSsaBr7.jpg",
     author: "Team Tourist",
     date: "Jan 10, 2026",
     content: `

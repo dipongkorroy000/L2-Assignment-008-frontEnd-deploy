@@ -1,7 +1,7 @@
 import {Skeleton} from "@/src/components/ui/skeleton";
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/src/components/ui/table";
 
-const DashboardPageSpinner = ({title}: {title: string}) => {
+const DashboardPageSkeleton = ({title}: {title: string}) => {
   return (
     <div className="max-w-6xl mx-auto my-10">
       <h2 className="text-2xl font-bold mb-6">{title}</h2>
@@ -63,4 +63,4 @@ const DashboardPageSpinner = ({title}: {title: string}) => {
   );
 };
 
-export default DashboardPageSpinner;
+export default DashboardPageSkeleton;

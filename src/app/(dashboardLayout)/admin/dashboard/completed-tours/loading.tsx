@@ -1,4 +1,4 @@
-import DashboardPageSpinner from "@/src/components/shared/skeletons/DashboardPageSpinner";
+import DashboardPageSpinner from "@/src/components/shared/skeletons/DashboardPageSkeleton";
 
 const loading = () => {
   return <DashboardPageSpinner title="Completed Tours"></DashboardPageSpinner>;
