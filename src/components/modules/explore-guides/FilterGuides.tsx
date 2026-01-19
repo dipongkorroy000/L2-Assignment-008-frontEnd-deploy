@@ -33,11 +33,11 @@ const FilterGuides = ({languages, categories}: {languages: string[]; categories:
   };
 
   return (
-    <section className="w-full bg-white rounded-lg shadow-sm p-4 flex gap-4 max-lg:flex-col">
+    <section className="w-full bg-white dark:bg-secondary rounded-lg shadow-sm p-4 flex gap-4 max-lg:flex-col">
       {/* Search Box */}
       <div className="flex gap-4 max-md:flex-col">
         <div className="flex items-center gap-2 w-full md:w-72">
-          <Search className="h-4 w-4 text-muted-foreground" />
+          <Search className="h-4 w-4 text-muted-foreground dark:text-white" />
           <Input
             type="text"
             placeholder="Search Guides..."
@@ -79,10 +79,10 @@ const FilterGuides = ({languages, categories}: {languages: string[]; categories:
 
       {/* Action Buttons */}
       <div className="flex flex-col gap-2 md:flex-row md:gap-2 w-full md:w-auto">
-        <Button onClick={applyFilters} disabled={isPending} className="w-full md:w-auto">
+        <Button onClick={applyFilters} disabled={isPending} variant="ghost" className="w-full md:w-auto cursor-pointer">
           <Filter className="h-4 w-4 mr-1 max-md:text-sm" /> Apply
         </Button>
-        <Button variant="outline" onClick={clearFilters} disabled={isPending} className="w-full md:w-auto max-md:text-sm">
+        <Button variant="outline" onClick={clearFilters} disabled={isPending} className="w-full md:w-auto max-md:text-sm cursor-pointer">
           Clear
         </Button>
       </div>

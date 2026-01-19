@@ -18,7 +18,7 @@ const ExploreGuidesPage = async ({searchParams}: {searchParams: Promise<{[key: s
   const totalPages = Math.ceil((guides?.data.meta?.total || 1) / (guides?.data.meta?.limit || 1));
 
   return (
-    <section>
+    <section style={{backgroundImage: "var(--gradient-primary-foreground)"}}>
       <div className="max-w-7xl mx-auto min-h-dvh py-20 space-y-20 max-md:space-y-10 max-md:py-5 max-xl:mx-10 max-md:mx-0 px-5">
         {guidesLanguages.data && <FilterGuides languages={guidesLanguages.data} categories={categories.data}></FilterGuides>}
 

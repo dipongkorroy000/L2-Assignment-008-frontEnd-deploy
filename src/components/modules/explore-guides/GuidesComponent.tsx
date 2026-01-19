@@ -34,7 +34,7 @@ const GuidesComponent = ({guides}: {guides: GuideDataProps[]}) => {
     <div className="w-full rounded-md shadow-sm">
       <div className="max-h-[500px] overflow-y-auto">
         <Table className="w-full">
-          <TableHeader className="sticky top-0 bg-white z-10 shadow-sm rounded-md">
+          <TableHeader className="sticky top-0 bg-white dark:bg-secondary z-10 shadow-sm rounded-md">
             <TableRow>
               <TableHead></TableHead>
               <TableHead>Name</TableHead>
@@ -52,7 +52,7 @@ const GuidesComponent = ({guides}: {guides: GuideDataProps[]}) => {
                     {guide.profilePhoto ? (
                       <Image src={guide.profilePhoto} alt={guide.name} width={40} height={40} className="rounded-full object-cover" />
                     ) : (
-                      <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-sm">{guide.name.charAt(0)}</div>
+                      <div className="w-10 h-10 rounded-full bg-gray-200 dark:bg-secondary flex items-center justify-center text-sm">{guide.name.charAt(0)}</div>
                     )}
                   </TableCell>
                   <TableCell className="font-medium">{guide.name}</TableCell>

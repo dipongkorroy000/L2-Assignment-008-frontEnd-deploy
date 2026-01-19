@@ -7,7 +7,7 @@ const ExploreGuideTableSkeleton = () => {
       <div className="">
         <Table className="w-full">
           {/* Table Header */}
-          <TableHeader className="sticky top-0 bg-white z-10 shadow-sm rounded-md">
+          <TableHeader className="sticky top-0 bg-white dark:bg-secondary z-10 shadow-sm rounded-md">
             <TableRow>
               <TableHead></TableHead>
               <TableHead>Name</TableHead>
