@@ -5,7 +5,7 @@ const RegisterPage = async ({searchParams}: {searchParams: Promise<URLSearchPara
   const params = await searchParams;
 
   return (
-    <section className="min-h-screen bg-gradient-to-r from-primary-foreground via-white to-primary-foreground">
+    <section className="min-h-screen" style={{backgroundImage: "var(--gradient-primary-foreground)"}}>
       <div className="flex min-h-svh w-full items-center shadow-lg justify-center px-5 md:p-10">
         <div className="w-full max-w-xl">
           <Card>
