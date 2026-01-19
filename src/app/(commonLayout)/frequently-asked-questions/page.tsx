@@ -5,7 +5,7 @@ import {Accordion, AccordionItem, AccordionTrigger, AccordionContent} from "@/sr
 
 const FAQPage = () => {
   return (
-    <section className="bg-gradient-to-r from-primary-foreground via-white to-primary-foreground min-h-screen">
+    <section className="min-h-screen" style={{backgroundImage: "var(--gradient-primary-foreground)"}}>
       <div className="max-w-7xl mx-auto py-10 max-md:py-10 max-xl:mx-10 max-md:mx-0 px-5">
         <GuideHeader></GuideHeader>
 
