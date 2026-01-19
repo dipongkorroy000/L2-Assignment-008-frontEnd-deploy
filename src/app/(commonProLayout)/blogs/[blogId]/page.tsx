@@ -17,7 +17,7 @@ const BlogPage = async ({params}: {params: Promise<{blogId: string}>}) => {
   };
 
   return (
-    <section className="min-h-screen py-16 px-6 md:px-20 bg-gradient-to-r from-primary-foreground via-white to-primary-foreground">
+    <section className="min-h-screen py-16 px-6 md:px-20" style={{backgroundImage: "var(--gradient-primary-foreground)"}}>
       <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-md p-8">
         {/* Header */}
         <div className="mb-6">
@@ -33,7 +33,7 @@ const BlogPage = async ({params}: {params: Promise<{blogId: string}>}) => {
         </div>
 
         {/* Content */}
-        <div className="prose prose-lg max-w-none text-gray-700 dark:text-gray-300">
+        <div className="prose prose-lg max-w-none text-gray-700 dark:text-muted-foreground">
           {blog.content.split("\n").map((para, idx) => (
             <p key={idx}>{para.trim()}</p>
           ))}

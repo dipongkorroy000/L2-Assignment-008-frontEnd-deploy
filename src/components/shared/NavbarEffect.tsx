@@ -17,10 +17,13 @@ const Navbar = ({profile}: {profile: any}) => {
   }, []);
 
   return (
+    // <header
+    //   className={`sticky top-0 z-50 w-full transition-all duration-300`}
+    //   style={{ background: "var(--gradient-primary-foreground)" }}
+    // >
     <header
-      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
-        scrolled ? "bg-white shadow-sm border-border" : "bg-gradient-to-r from-primary-foreground via-white to-primary-foreground backdrop-blur"
-      }`}
+      className={`sticky top-0 z-50 w-full transition-all duration-300 ${scrolled ? "shadow dark:bg-secondary bg-white" : ""}`}
+      style={{backgroundImage: !scrolled ? "var(--gradient-primary-foreground)" : undefined}}
     >
       <MainNavbar profile={profile} />
     </header>

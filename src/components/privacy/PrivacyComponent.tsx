@@ -20,7 +20,7 @@ const PrivacyComponent = () => {
       {/* Accordion for Details */}
       <Accordion type="single" collapsible className="w-full p-8 max-md:p-5">
         <AccordionItem value="dataCollection">
-          <AccordionTrigger className="2xl:text-xl xl:text-lg max-md:text-sm">Data We Collect</AccordionTrigger>
+          <AccordionTrigger className="2xl:text-xl xl:text-lg max-md:text-sm dark:text-gray-300">Data We Collect</AccordionTrigger>
           <AccordionContent className="text-muted-foreground">
             <ul className="list-disc pl-6 space-y-1 text-lg max-lg:text-sm">
               <li>Basic profile info (name, email, contact number)</li>
@@ -32,7 +32,7 @@ const PrivacyComponent = () => {
         </AccordionItem>
 
         <AccordionItem value="dataUsage">
-          <AccordionTrigger className="2xl:text-xl xl:text-lg max-md:text-sm">How We Use Your Data</AccordionTrigger>
+          <AccordionTrigger className="2xl:text-xl xl:text-lg max-md:text-sm dark:text-gray-300">How We Use Your Data</AccordionTrigger>
           <AccordionContent className="text-muted-foreground">
             <ul className="list-disc pl-6 space-y-1 text-lg max-lg:text-sm">
               <li>To connect tourists with guides</li>
@@ -44,7 +44,7 @@ const PrivacyComponent = () => {
         </AccordionItem>
 
         <AccordionItem value="rights">
-          <AccordionTrigger className="2xl:text-xl xl:text-lg max-md:text-sm">Your Rights</AccordionTrigger>
+          <AccordionTrigger className="2xl:text-xl xl:text-lg max-md:text-sm dark:text-gray-300">Your Rights</AccordionTrigger>
           <AccordionContent className="text-muted-foreground">
             <ul className="list-disc pl-6 space-y-1 text-lg max-lg:text-sm">
               <li>Access and update your personal data</li>

@@ -8,7 +8,7 @@ const ExploreToursPage = async () => {
   const toursData = tour?.data ?? [];
 
   return (
-    <section className="bg-gradient-to-r from-primary-foreground via-white to-primary-foreground min-h-screen">
+    <section className="min-h-screen" style={{backgroundImage: "var(--gradient-primary-foreground)"}}>
       <AIToursSuggestion />
 
       <Tours tours={toursData}></Tours>

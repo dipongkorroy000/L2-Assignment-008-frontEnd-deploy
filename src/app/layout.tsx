@@ -4,6 +4,7 @@ import "./globals.css";
 import {Toaster} from "sonner";
 import RouteProgress from "../components/shared/RouteProgress";
 import {Suspense} from "react";
+import {ThemeProvider} from "../components/theme-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,12 +24,17 @@ export const metadata: Metadata = {
 
 export default function RootLayout({children}: Readonly<{children: React.ReactNode}>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Suspense fallback={null}>
           <RouteProgress />
         </Suspense>
-        {children} <Toaster position="top-right" richColors></Toaster>
+
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
+          {children}
+        </ThemeProvider>
+
+        <Toaster position="top-right" richColors></Toaster>
       </body>
     </html>
   );

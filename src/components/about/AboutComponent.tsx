@@ -6,7 +6,7 @@ const AboutComponent = () => {
     <div className="">
       <h2 className="text-4xl font-semibold text-center text-primary mb-5 max-xl:text-2xl max-lg:text-xl max-md:mb-2">About Our Project</h2>
 
-      <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-10 max-md:text-sm max-md:mb-5">
+      <p className="text-lg text-gray-600 dark:text-gray-300 text-center max-w-3xl mx-auto mb-10 max-md:text-sm max-md:mb-5">
         This platform connects travelers with local guides across Bangladesh. Our mission is to make tourism authentic, accessible, and community-driven.
       </p>
 

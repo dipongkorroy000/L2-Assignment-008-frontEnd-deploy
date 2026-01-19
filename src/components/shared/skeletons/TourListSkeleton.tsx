@@ -40,7 +40,7 @@ const TourListSkeleton = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6 max-h-[90vh] overflow-y-auto scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-gray-300 scrollbar-track-transparent hover:scrollbar-thumb-gray-400">
         {Array.from({length: 6}).map((_, idx) => (
-          <Card key={idx} className="shadow-sm bg-white">
+          <Card key={idx} className="shadow-sm bg-white dark:bg-primary">
             <CardHeader className="flex justify-between">
               <Skeleton className="h-6 w-2/3" />
               <Skeleton className="h-4 w-12" />

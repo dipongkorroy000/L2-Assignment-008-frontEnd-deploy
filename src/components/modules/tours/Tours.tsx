@@ -28,7 +28,7 @@ const Tours = ({tours}: {tours: CategoryGroup[]}) => {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6 max-h-[80vh] overflow-y-auto scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-gray-300 scrollbar-track-transparent hover:scrollbar-thumb-gray-400">
               {category.tour.map((tour, idx) => (
-                <Card key={idx} className="shadow-sm hover:shadow-lg transition-shadow bg-white">
+                <Card key={idx} className="shadow-sm hover:shadow-lg transition-shadow bg-white dark:bg-chart-5">
                   <Link href={`/explore-tours/${tour.id}`}>
                     <CardHeader className="flex justify-between">
                       <CardTitle className="md:text-xl">{tour.title}</CardTitle>

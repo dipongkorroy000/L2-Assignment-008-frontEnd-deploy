@@ -6,7 +6,7 @@ import PrivacyComponent from "@/src/components/privacy/PrivacyComponent";
 
 export default function HomePage() {
   return (
-    <div className="bg-gradient-to-r from-primary-foreground via-white to-primary-foreground">
+    <div style={{backgroundImage: "var(--gradient-primary-foreground)"}}>
       <div className="max-xl:mx-10 max-md:mx-0">
         <section className="flex flex-col items-center justify-center text-center 2xl:py-20 xl:py-16 max-md:py-0">
           <HeroSection></HeroSection>

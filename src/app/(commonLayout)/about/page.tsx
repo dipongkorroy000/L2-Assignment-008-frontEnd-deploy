@@ -4,7 +4,7 @@ import MyMap from "@/src/components/map/Map";
 
 export default function AboutPage() {
   return (
-    <section className="bg-gradient-to-r from-primary-foreground via-white to-primary-foreground min-h-screen py-20 max-md:pt-0">
+    <section className="min-h-screen py-20 max-md:pt-0" style={{backgroundImage: "var(--gradient-primary-foreground)"}}>
       <div className="max-w-7xl mx-auto max-md:py-10 max-xl:mx-10 max-md:mx-0 px-5">
         <AboutComponent />
       </div>

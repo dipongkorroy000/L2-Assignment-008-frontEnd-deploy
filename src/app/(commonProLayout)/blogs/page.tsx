@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 
@@ -32,7 +30,7 @@ const blogs = [
 
 const BlogsPage = () => {
   return (
-    <section className="bg-gradient-to-r from-primary-foreground via-white to-primary-foreground min-h-screen py-12 px-6 md:px-20">
+    <section className="min-h-screen py-12 px-6 md:px-20" style={{backgroundImage: "var(--gradient-primary-foreground)"}}>
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">

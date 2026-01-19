@@ -17,10 +17,10 @@ export default function BenefitsSection() {
           initial={{opacity: 0, y: 50}}
           whileInView={{opacity: 1, y: 0}}
           transition={{delay: i * 0.2}}
-          className="bg-white rounded-lg shadow-md py-14 px-6 text-center hover:scale-105 transform transition max-md:py-10"
+          className="bg-white dark:bg-gray-900 rounded-lg shadow-md py-14 px-6 text-center hover:scale-105 transform transition max-md:py-10"
         >
           <h2 className="text-xl font-semibold text-primary max-lg:text-lg">{item.title}</h2>
-          <p className="text-gray-600 mt-2 max-lg:text-sm">{item.desc}</p>
+          <p className="text-gray-600 dark:text-muted-foreground mt-2 max-lg:text-sm">{item.desc}</p>
         </motion.div>
       ))}
     </section>

@@ -22,7 +22,13 @@ const HeroSection = () => {
       <motion.h1 initial={{opacity: 0, y: -100}} animate={{opacity: 1, y: 0}} transition={{duration: 1}} className="w-full">
         <div className="wrapper">
           <svg id="header-name">
-            <text x="50%" y="50%" dy=".35em" textAnchor="middle" className="2xl:text-6xl lg:text-5xl md:text-4xl sm:text-3xl text-lg font-normal max-md:font-sans">
+            <text
+              x="50%"
+              y="50%"
+              dy=".35em"
+              textAnchor="middle"
+              className="2xl:text-6xl lg:text-5xl md:text-4xl sm:text-3xl text-lg font-normal max-md:font-sans"
+            >
               Explore Bangladesh Like a Local
             </text>
           </svg>
@@ -33,7 +39,7 @@ const HeroSection = () => {
         initial={{opacity: 0}}
         animate={{opacity: 1}}
         transition={{delay: 0.5, duration: 1}}
-        className="mt-4 text-lg text-gray-600 max-md:text-sm max-md:mt-2"
+        className="mt-4 text-lg text-gray-600 dark:text-gray-300 max-md:text-sm max-md:mt-2"
       >
         Find guides, discover hidden gems, and enjoy authentic experiences.
       </motion.p>

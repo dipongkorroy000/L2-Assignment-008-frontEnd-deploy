@@ -15,10 +15,10 @@ export default function HowItWorksSection() {
             initial={{opacity: 0, y: 30}}
             whileInView={{opacity: 1, y: 0}}
             transition={{delay: i * 0.2}}
-            className="bg-white rounded-lg shadow-md py-12 px-6 max-md:py-8"
+            className="bg-white dark:bg-gray-900 rounded-lg shadow-md py-12 px-6 max-md:py-8"
           >
             <h3 className="text-lg font-semibold text-primary">Step {i + 1}</h3>
-            <p className="text-gray-600 mt-2 max-lg:text-sm">{step}</p>
+            <p className="text-gray-600 dark:text-muted-foreground mt-2 max-lg:text-sm">{step}</p>
           </motion.div>
         ))}
       </div>

@@ -27,14 +27,14 @@ const FeatureDestination = () => {
             initial={{opacity: 0, y: 50}}
             whileInView={{opacity: 1, y: 0}}
             transition={{delay: i * 0.3}}
-            className="p-6 rounded-lg shadow-md bg-gradient-to-r from-blue-50 to-white hover:scale-105 transform transition"
+            className="p-6 rounded-lg shadow-md bg-gradient-to-r dark:from-gray-900 from-blue-50 dark:to-gray-800 to-white hover:scale-105 transform transition"
           >
             <h3 className="text-xl max-md:text-lg font-bold text-chart-5">{city}</h3>
-            <p className="text-gray-600 mt-2 max-md:text-sm">Discover the culture, history, and hidden gems of {city}.</p>
+            <p className="text-gray-600 dark:text-muted-foreground mt-2 max-md:text-sm">Discover the culture, history, and hidden gems of {city}.</p>
 
             <button
               onClick={() => handleClick(city)}
-              className="mt-4 px-4 py-2 bg-white rounded-lg hover:bg-primary hover:text-white cursor-pointer flex items-center justify-center gap-2 min-w-[120px]"
+              className="mt-4 px-4 py-2 bg-white dark:bg-primary rounded-lg hover:bg-primary hover:text-white dark:hover:text-secondary cursor-pointer flex items-center justify-center gap-2 min-w-[120px]"
               disabled={isPending && loadingCity === city}
             >
               {isPending && loadingCity === city ? (

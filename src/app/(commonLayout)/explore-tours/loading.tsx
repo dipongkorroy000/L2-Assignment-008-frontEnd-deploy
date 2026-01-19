@@ -3,7 +3,7 @@ import {Card, CardContent, CardFooter, CardHeader} from "@/src/components/ui/car
 
 const loading = () => {
   return (
-    <section className="bg-gradient-to-r from-primary-foreground via-white to-primary-foreground min-h-screen">
+    <section className="min-h-screen" style={{backgroundImage: "var(--gradient-primary-foreground)"}}>
       <div className="max-w-7xl pt-5 mx-auto space-y-8 max-md:px-5 px-5 max-xl:mx-10 max-md:mx-0">
         <div className="space-y-6">
           {/* Header */}
@@ -41,7 +41,7 @@ const loading = () => {
               {/* Tours Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6 max-h-[80vh] overflow-y-auto scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-gray-300 scrollbar-track-transparent hover:scrollbar-thumb-gray-400">
                 {Array.from({length: 3}).map((_, idx) => (
-                  <Card key={idx} className="shadow-sm bg-white">
+                  <Card key={idx} className="shadow-sm bg-white dark:bg-primary">
                     <CardHeader className="flex justify-between">
                       <Skeleton className="h-5 w-2/3" />
                       <Skeleton className="h-4 w-12" />

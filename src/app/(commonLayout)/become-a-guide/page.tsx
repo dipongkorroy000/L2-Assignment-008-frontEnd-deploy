@@ -5,7 +5,7 @@ import RequirementsSection from "@/src/components/become-guide-page/Requirements
 
 export default async function BecomeGuidePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-r from-primary-foreground via-white to-primary-foreground">
+    <div className="min-h-screen" style={{backgroundImage: "var(--gradient-primary-foreground)"}}>
       <HeroSection />
       <BenefitsSection />
       <HowItWorksSection />
